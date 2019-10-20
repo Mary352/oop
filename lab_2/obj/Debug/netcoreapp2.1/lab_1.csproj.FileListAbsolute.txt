@@ -1,5 +1,4 @@
 D:\3 сем\ООП 3 сем\ЛР\lab_2\obj\Debug\netcoreapp2.1\lab_1.csprojAssemblyReference.cache
-D:\3 сем\ООП 3 сем\ЛР\lab_2\obj\Debug\netcoreapp2.1\lab_1.csproj.CoreCompileInputs.cache
 D:\3 сем\ООП 3 сем\ЛР\lab_2\obj\Debug\netcoreapp2.1\lab_1.AssemblyInfoInputs.cache
 D:\3 сем\ООП 3 сем\ЛР\lab_2\obj\Debug\netcoreapp2.1\lab_1.AssemblyInfo.cs
 D:\3 сем\ООП 3 сем\ЛР\lab_2\bin\Debug\netcoreapp2.1\lab_2.deps.json

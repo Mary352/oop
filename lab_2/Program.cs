@@ -8,16 +8,21 @@ namespace lab_1
     {
         static void Main(string[] args)
         {
+
+            string sssss = "123";
+            string ssssss = "1234567";
+            Console.WriteLine(sssss.CompareTo(ssssss));
+            
+
+
             //-----------------------------------1-------------------------------------------
             //----a------------------
-              int a = -1000000000;
+            int a = -1000000000;
               double b = 10.25454;
               float c = 10.22f;
               char d = 's';
               bool e = true;
               decimal f = 5.46M;
-              string g = "long day";
-              object h;
               sbyte l = -127;
               byte m = 255;
               uint n = 1000000000;
@@ -67,7 +72,7 @@ namespace lab_1
               string strl1 = @"Hello!->
   ->My dear friend!";
               Console.WriteLine(strl1);
-              string strl2 = @"\Hola!\";            
+              string strl2 = "/Hola!/";            
               Console.WriteLine(strl2);
 
               if (strl1 == strl2)
