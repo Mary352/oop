@@ -1,0 +1,11 @@
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\bin\Debug\netcoreapp3.0\lab_4 (recovery).exe
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\bin\Debug\netcoreapp3.0\lab_4 (recovery).deps.json
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\bin\Debug\netcoreapp3.0\lab_4 (recovery).runtimeconfig.json
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\bin\Debug\netcoreapp3.0\lab_4 (recovery).runtimeconfig.dev.json
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\bin\Debug\netcoreapp3.0\lab_4 (recovery).dll
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\bin\Debug\netcoreapp3.0\lab_4 (recovery).pdb
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\obj\Debug\netcoreapp3.0\lab_4 (recovery).csprojAssemblyReference.cache
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\obj\Debug\netcoreapp3.0\lab_4 (recovery).AssemblyInfoInputs.cache
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\obj\Debug\netcoreapp3.0\lab_4 (recovery).AssemblyInfo.cs
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\obj\Debug\netcoreapp3.0\lab_4 (recovery).dll
+D:\3 сем\ООП 3 сем\ЛР\lab_4 (recovery)\obj\Debug\netcoreapp3.0\lab_4 (recovery).pdb
