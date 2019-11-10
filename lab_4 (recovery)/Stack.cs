@@ -71,8 +71,16 @@ namespace lab_4__recovery_
         {
             elem.elements[count] = 0;
             count--;
-            saveCount = count;
+            if(count > -1)
+            {
+                saveCount = count;
+            }            
             countDel++;         //учесть кол-во удалённых эл-в
+            if(count == -1)
+            {
+                Console.WriteLine("\nПосле выполнения операции стек пуст");
+                count++;
+            }
 
             return elem;
         }

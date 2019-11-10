@@ -71,7 +71,9 @@ namespace lab_4__recovery_
 
             date.GetDate();
 
-            Console.WriteLine(StatisticOperation.GetSum(stack2)); 
+            //StatisticOperation.GetSum(stack1);
+            //StatisticOperation.Max_Min(stack1);
+            StatisticOperation.ElsCounter(stack1);
         }
     }
 }
