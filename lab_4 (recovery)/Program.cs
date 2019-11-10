@@ -32,7 +32,8 @@ namespace lab_4__recovery_
             //Console.WriteLine("Sixth elem: " + stack1.Elements);
             stack1--;
 
-            Console.WriteLine($"{stack1.GetElsNum() + 1} elem: " + stack1.Elements);
+            Console.WriteLine($"\n{stack1.GetElsNum() + 1} elem: " + stack1.Elements);
+
 
             if (stack1)
             {
@@ -45,17 +46,22 @@ namespace lab_4__recovery_
 
             Stack stack2 = new Stack();
 
+            
             if (stack2)
             {
-                Console.WriteLine("Стек пуст");
+                Console.WriteLine("\nНовый стек пуст");
             }
             else
             {
-                Console.WriteLine($"В стеке есть элементы {stack2.GetElsNum() + 1}");
+                Console.WriteLine($"\nВ новом стеке есть элементы {stack2.GetElsNum() + 1}");
             }
             stack2 = stack1 > stack2;
 
-            Console.WriteLine($"Upper elem {stack2.GetElsNum()}: " + stack2.Elements);
+            Console.WriteLine($"Upper elem {stack2.GetElsNum() + 1}: " + stack2.ElementsUpSort + "\n");
+
+            //Stack stack3 = new Stack();
+            //stack3 = stack1 < stack3;
+            //Console.WriteLine($"Upper elem {stack3.GetElsNum() + 1}: " + stack3.Elements + "\n");
 
             Stack.Owner owner = new Stack.Owner("Maria", 51548647, "BSTU");
 

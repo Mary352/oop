@@ -9,10 +9,18 @@ namespace lab_4__recovery_
         private int[] elements;
         private static int count = -1;
         private static int saveCount;
+        private static int countDel = 0;
+
 
         public Stack()
         {
             elements = new int[5];
+        }
+
+        public int ElementsUpSort
+        {
+            get => elements[count + countDel];
+            set => elements[count + countDel] = value;
         }
 
         public int Elements
@@ -20,11 +28,11 @@ namespace lab_4__recovery_
             get => elements[count];
             set => elements[count] = value;
         }
-        public int[] Elems
-        {
-            get => elements;
-            set => elements = value;
-        }
+        //public int[] Elems
+        //{
+        //    get => elements;
+        //    set => elements = value;
+        //}
         public bool IsEmpty()
         {
             return elements[saveCount] == 0;
@@ -34,6 +42,23 @@ namespace lab_4__recovery_
         {
             return count;
         }
+
+        public int GetElsNumUpSort()
+        {
+            return count + countDel;
+        }
+
+        //public void CheckStack()
+        //{
+        //    if (Elements)
+        //    {
+        //        Console.WriteLine("Стек пуст");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"В стеке есть элементы {sta.GetElsNum() + 1}");
+        //    }
+        //}
         public static int operator +(int data, Stack elems)
         {
             count++;
@@ -47,6 +72,7 @@ namespace lab_4__recovery_
             elem.elements[count] = 0;
             count--;
             saveCount = count;
+            countDel++;         //учесть кол-во удалённых эл-в
 
             return elem;
         }
@@ -74,21 +100,28 @@ namespace lab_4__recovery_
         }
         public static Stack operator >(Stack elem, Stack anothStack)
         {
+            //foreach(int x in elem.elements)
+            //{
+            //    Console.Write(x + "\t");
+            //}
+            //Console.WriteLine("");
+
             Array.Copy(elem.elements, anothStack.elements, 5);  //not saveCount then try elem.elements.Length(was there from the beginning)
             Array.Sort(anothStack.elements);
-            
+
+            //foreach (int o in anothStack.elements)
+            //{
+            //    Console.Write(o + "\t");
+            //}
+            //Console.WriteLine("");
+
             return anothStack;
         }
         public static Stack operator <(Stack elem, Stack anothStack)
         {
-            int[] arrSave = new int[5];
-
-            Array.Copy(elem.elements, arrSave, saveCount);  //not saveCount then try elem.elements.Length(was there from the beginning)
-
-            Array.Sort(arrSave);
-            Array.Reverse(arrSave);
-
-            Array.Copy(arrSave, anothStack.elements, saveCount);
+            Array.Copy(elem.elements, anothStack.elements, 5);  //not saveCount then try elem.elements.Length(was there from the beginning)
+            Array.Sort(anothStack.elements);
+            Array.Reverse(anothStack.elements);
 
             return anothStack;
         }
