@@ -6,7 +6,7 @@ namespace lab_4__recovery_
     {
         public static int sum = 0;
 
-        public static void GetSum(Stack stack)
+        public static int GetSum(Stack stack)
         {
             for (int i = stack.GetElsNum(); i >= 0; i--)
             {
@@ -19,6 +19,8 @@ namespace lab_4__recovery_
             }
 
             Console.WriteLine("\nСумма эл-в стека: " + sum);
+
+            return sum;
         }
 
         public static void Max_Min(Stack stack)

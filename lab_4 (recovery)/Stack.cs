@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab_4__recovery_
 {
-    class Stack
+    public class Stack
     {
         private int[] elements;
         private static int count = -1;
@@ -28,11 +28,13 @@ namespace lab_4__recovery_
             get => elements[count];
             set => elements[count] = value;
         }
-        //public int[] Elems
-        //{
-        //    get => elements;
-        //    set => elements = value;
-        //}
+
+        public int[] Elems
+        {
+            get => elements;
+            set => elements = value;
+        }
+
         public bool IsEmpty()
         {
             return elements[saveCount] == 0;
@@ -43,22 +45,6 @@ namespace lab_4__recovery_
             return count;
         }
 
-        public int GetElsNumUpSort()
-        {
-            return count + countDel;
-        }
-
-        //public void CheckStack()
-        //{
-        //    if (Elements)
-        //    {
-        //        Console.WriteLine("Стек пуст");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine($"В стеке есть элементы {sta.GetElsNum() + 1}");
-        //    }
-        //}
         public static int operator +(int data, Stack elems)
         {
             count++;
@@ -125,6 +111,7 @@ namespace lab_4__recovery_
 
             return anothStack;
         }
+
         public static Stack operator <(Stack elem, Stack anothStack)
         {
             Array.Copy(elem.elements, anothStack.elements, 5);  //not saveCount then try elem.elements.Length(was there from the beginning)
