@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab_5
 {
-    interface Land_Water
+    class PublHouse
     {
 
     }

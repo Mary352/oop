@@ -4,9 +4,9 @@ using System.Text;
 
 namespace lab_5
 {
-    class Water
+    class Person
     {
-        public class Sea
+        public class Author
         {
 
         }
