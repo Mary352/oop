@@ -20,18 +20,5 @@ namespace lab_5
             get => lastName;
             set => lastName = value;
         }
-
-        public class Author
-        {
-            private string bookTitle;
-            private bool isBought = false;
-            private bool isPrinted = false;
-
-            public string BookTitle
-            {
-                get => bookTitle;
-                set => bookTitle = value;
-            }
-        }
     }
 }

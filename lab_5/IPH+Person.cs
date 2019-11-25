@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab_5
 {
-    interface PH_Person
+    interface IPH_Person
     {
         void Buy();
         void Print();

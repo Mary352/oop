@@ -6,7 +6,7 @@ namespace lab_5
 {
     abstract class forPublHouse
     {
-        //public abstract void Info();
+        public abstract void Info();
 
     }
 }
