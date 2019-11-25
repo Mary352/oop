@@ -1,8 +1,6 @@
 *.pdf
 *.docx
 /сдано
-/lab_4
-/lab_4 (List base)
 
 
 ## Ignore Visual Studio temporary files, build results, and

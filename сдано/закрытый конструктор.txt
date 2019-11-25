@@ -1,0 +1,44 @@
+»зучаю основы €зыка по книге основы c# ¬ладимира Ѕиллига. 
+ѕри описании создани€ констант собственного класса создаетс€ статический конструктор, который вызывает 
+закрытый конструктор. 
+—кажите, какой смысл использовани€ в данном случае закрытого конструктора. 
+ѕочему нельз€ было использовать обычный открытый конструктор?
+
+private Rational(int a, int b, string t)
+{
+    m = a; n = b;
+}
+static Rational()
+{
+    Console.WriteLine("static constructor Rational");
+    Zero = new Rational(0, 1, "private");
+    One = new Rational (1, 1, "private");
+}
+
+
+class MyClass
+    {
+        public int X {get;}
+ 
+        private MyClass(int a)
+        {
+            X = a;
+        }
+ 
+        public void Show()
+        {
+            Console.WriteLine($"Object value = {X}");
+        }
+ 
+        public static MyClass Contructor(int a)
+        {
+            return new MyClass(a);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var v = MyClass.Contructor(2);
+        }
+    }
