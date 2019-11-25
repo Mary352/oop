@@ -7,6 +7,7 @@ namespace lab_5
     class PublHouse : forPublHouse
     {
         private string name;
+        
 
         public string Name
         {
@@ -21,6 +22,10 @@ namespace lab_5
             private int circul;
             private string title;
             private float price;
+            private string aFirstName;
+            private string aLastName;
+            private bool isBought = false;
+            private bool isPrinted = false;
 
             public string ISBN
             {
@@ -52,35 +57,43 @@ namespace lab_5
                 set => price = value;
             }
 
+            public string AFirstName
+            {
+                get => aFirstName;
+                set => aFirstName = value;
+            }
+
+            public string ALastName
+            {
+                get => aLastName;
+                set => aLastName = value;
+            }
+
             public class Book : PrintEdit
             {
-                private string aFirstName;
-                private string aLastName;
+                public string genre;
 
-                public string AFirstName
+                public string Genre
                 {
-                    get => aFirstName;
-                    set => aFirstName = value;
+                    get => genre;
+                    set => genre = value;
                 }
-
-                public string ALastName
-                {
-                    get => aLastName;
-                    set => aLastName = value;
-                }
-
 
                 public class SchoolBook : Book
                 {
+                    private int clas;
 
+                    public int Clas
+                    {
+                        get => clas;
+                        set => clas = value;
+                    }
                 }
             }
 
             public class Magazine : PrintEdit
             {
                 private int month;
-                private string edFirstName;
-                private string edLastName;
 
                 public int Month
                 {

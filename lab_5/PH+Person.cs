@@ -6,6 +6,7 @@ namespace lab_5
 {
     interface PH_Person
     {
-
+        void Buy();
+        void Print();
     }
 }

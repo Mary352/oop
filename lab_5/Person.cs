@@ -24,6 +24,8 @@ namespace lab_5
         public class Author
         {
             private string bookTitle;
+            private bool isBought = false;
+            private bool isPrinted = false;
 
             public string BookTitle
             {
