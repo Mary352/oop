@@ -16,6 +16,7 @@ namespace lab_5
         public PrintEdit(string name, string Title, float Price, int Year, int Circul) : base(name)
         {
             total += Circul;
+            Name = name;
 
             title = Title;
             price = Price;
@@ -45,14 +46,18 @@ namespace lab_5
         {
             get => price;
             set => price = value;
-        }
-
-        
+        }        
 
         public override void Info()
         {
             Console.WriteLine();
-            Console.WriteLine($"Книга '{0}'" + Title + " Издательство " + Name);
+            Console.WriteLine($"Наименование печатного издания '{0}'" + title + " Издательство " + Name + "Год издания " + year);
+        }
+
+        public override string ToString()
+        {
+            Console.WriteLine(base.ToString());
+            return $"Издательство: {Name}\nНаименование печатного издания: {title}\nГод издания: {year}\nЦена: {price}\nТираж: {circul}\n";
         }
     }
 }

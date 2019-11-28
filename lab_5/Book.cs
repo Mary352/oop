@@ -6,28 +6,21 @@ namespace lab_5
 {
     class Book : PrintEdit, IPH_Person
     {
-        private string genre;
         private string aFirstName;
         private string aLastName;
         private static int total = 0;
 
-        public Book(string name, string title, float price, int year, int circul, string AFirName, string ALastName, string Genre) : base(name, title, price, year, circul)
+        public Book(string name, string title, float price, int year, int circul, string AFirName, string ALastName) : base(name, title, price, year, circul)
         {            
             Title = title;
             Price = price;
             Year = year;
             Circul = circul;
             //new
-            genre = Genre;
             aFirstName = AFirName;
             aLastName = ALastName;
 
             total += Circul;
-        }
-        public string Genre
-        {
-            get => genre;
-            set => genre = value;
         }
 
         public string AFirstName
@@ -44,12 +37,19 @@ namespace lab_5
 
         public override void Info()
         {
-            Console.WriteLine("Жанр " + genre);
+            char init = aFirstName[0];
+            Console.WriteLine($"Книга '{Title}'\nАвтор: {aFirstName}. {aLastName}");
         }
 
         public override int Count()
         {
             return total;
+        }
+
+        public override string ToString()
+        {
+            Console.WriteLine(base.ToString());
+            return $"Издательство: {Name}\nНазвание книги: {Title}\nАвтор: {aLastName} {aFirstName}\nГод издания: {Year}\nЦена: {Price}\nТираж: {Circul}\n";
         }
     }
 }

@@ -31,5 +31,11 @@ namespace lab_5
         {
             return total;
         }
+
+        public override string ToString()
+        {
+            Console.WriteLine(base.ToString());
+            return $"Издательство: {Name}\nНазвание журнала: {Title}\nДата издания: {month}/{Year}\nЦена: {Price}\nТираж: {Circul}\n";
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace lab_5
         public override string ToString()
         {
             Console.WriteLine(base.ToString());
-            return $"Имя: {FirstName}\nФамилия: {LastName}\nВозраст: {Age}\nНазвание книги: {bookTitle}";
+            return $"Имя: {FirstName}\nФамилия: {LastName}\nВозраст: {Age}\nНазвание книги: {bookTitle}\n";
         }
 
     }

@@ -38,7 +38,7 @@ namespace lab_5
         public override string ToString()
         {
             Console.WriteLine(base.ToString());
-            return $"Имя: {firstName}\nФамилия: {lastName}\nВозраст: {age}";
+            return $"Имя: {firstName}\nФамилия: {lastName}\nВозраст: {age}\n";
         }
 
         public override bool Equals(object obj)

@@ -36,5 +36,11 @@ namespace lab_5
         {
             return count;
         }
+
+        public override string ToString()
+        {
+            Console.WriteLine(base.ToString());
+            return $"Издательство: {name}\n";
+        }
     }
 }
