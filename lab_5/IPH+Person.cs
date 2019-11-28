@@ -6,7 +6,6 @@ namespace lab_5
 {
     interface IPH_Person
     {
-        void Buy();
-        void Print();
+        int Count();
     }
 }

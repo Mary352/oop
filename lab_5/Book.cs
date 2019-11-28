@@ -9,11 +9,10 @@ namespace lab_5
         private string genre;
         private string aFirstName;
         private string aLastName;
+        private static int total;
 
         public Book(string name, string title, float price, int year, int circul, string AFirName, string ALastName, string Genre) : base(name, title, price, year, circul)
-        {
-            //total += Circul;
-            
+        {            
             Title = title;
             Price = price;
             Year = year;
@@ -22,6 +21,8 @@ namespace lab_5
             genre = Genre;
             aFirstName = AFirName;
             aLastName = ALastName;
+
+            total += Circul;
         }
         public string Genre
         {
@@ -44,6 +45,11 @@ namespace lab_5
         public override void Info()
         {
             Console.WriteLine("Жанр " + genre);
+        }
+
+        public override int Count()
+        {
+            return total;
         }
     }
 }

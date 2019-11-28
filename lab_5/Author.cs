@@ -4,9 +4,10 @@ using System.Text;
 
 namespace lab_5
 {
-    class Author : Person
+    sealed class Author : Person
     {
         private string bookTitle;
+        private static int count = 0;
         //private bool isBought = false;
         //private bool isPrinted = false;
 
@@ -17,6 +18,8 @@ namespace lab_5
             Age = age;
             //new
             bookTitle = BookTitle;
+
+            count++;
         }
 
         public string BookTitle
@@ -24,5 +27,11 @@ namespace lab_5
             get => bookTitle;
             set => bookTitle = value;
         }
+
+        public int Count()
+        {
+            return count;
+        }
+
     }
 }
