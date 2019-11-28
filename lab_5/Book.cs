@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab_5
 {
-    class Book : PrintEdit
+    class Book : PrintEdit, IPH_Person
     {
         private string genre;
         private string aFirstName;
@@ -51,7 +51,5 @@ namespace lab_5
         {
             return total;
         }
-
-
     }
 }

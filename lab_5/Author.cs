@@ -31,7 +31,11 @@ namespace lab_5
             return count;
         }
 
-        
+        public override string ToString()
+        {
+            Console.WriteLine(base.ToString());
+            return $"Имя: {FirstName}\nФамилия: {LastName}\nВозраст: {Age}\nНазвание книги: {bookTitle}";
+        }
 
     }
 }

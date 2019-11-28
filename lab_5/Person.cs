@@ -35,6 +35,12 @@ namespace lab_5
             set => age = value;
         }
 
+        public override string ToString()
+        {
+            Console.WriteLine(base.ToString());
+            return $"Имя: {firstName}\nФамилия: {lastName}\nВозраст: {age}";
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -54,7 +60,5 @@ namespace lab_5
             hash = (hash * 47) + age.GetHashCode();
             return hash;
         }
-
-
     }
 }
