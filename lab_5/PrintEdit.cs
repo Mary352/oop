@@ -12,8 +12,6 @@ namespace lab_5
         private string title;
         private float price;
         private static int total = 0;
-        //private bool isBought = false;
-        //private bool isPrinted = false;
 
         public PrintEdit(string name, string Title, float Price, int Year, int Circul) : base(name)
         {

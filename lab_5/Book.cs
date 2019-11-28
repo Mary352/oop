@@ -9,7 +9,7 @@ namespace lab_5
         private string genre;
         private string aFirstName;
         private string aLastName;
-        private static int total;
+        private static int total = 0;
 
         public Book(string name, string title, float price, int year, int circul, string AFirName, string ALastName, string Genre) : base(name, title, price, year, circul)
         {            
@@ -51,5 +51,7 @@ namespace lab_5
         {
             return total;
         }
+
+
     }
 }

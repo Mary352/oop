@@ -8,7 +8,6 @@ namespace lab_5
     {
         public abstract void Info();
         public abstract void Buy();
-        public abstract void Print();
         public abstract int Count();
     }
 }

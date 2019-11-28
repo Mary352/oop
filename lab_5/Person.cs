@@ -9,8 +9,7 @@ namespace lab_5
         private string firstName;
         private string lastName;
         private int age;
-
-
+        
         public Person(string FirstName, string LastName, int Age)
         {
             firstName = FirstName;
@@ -35,5 +34,27 @@ namespace lab_5
             get => age;
             set => age = value;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+
+            Person a = (Person)obj;
+
+            return (this.FirstName == a.FirstName && this.LastName == a.LastName && this.Age == a.Age);
+
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 211;
+
+            hash = string.IsNullOrEmpty(firstName) ? 0 : firstName.GetHashCode();
+            hash = (hash * 47) + age.GetHashCode();
+            return hash;
+        }
+
+
     }
 }

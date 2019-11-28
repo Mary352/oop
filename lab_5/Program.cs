@@ -7,6 +7,8 @@ namespace lab_5
         
         static void Main(string[] args)
         {
+            Person a1 = new Person("Olga", "Sergeeva", 26);
+            Console.WriteLine(a1.ToString());
             
         }
     }
