@@ -8,6 +8,18 @@ namespace lab_5
     {
         private int month;
 
+        public Magazine(string name, string title, float price, int year, int circul, int Month) : base(name, title, price, year, circul)
+        {
+            //total += Circul;
+
+            Title = title;
+            Price = price;
+            Year = year;
+            Circul = circul;
+            //new
+            month = Month;
+        }
+
         public int Month
         {
             get => month;

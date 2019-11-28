@@ -6,20 +6,23 @@ namespace lab_5
 {
     class PrintEdit : PublHouse
     {
-        private string isbn;
+        
         private int year;
         private int circul;
         private string title;
         private float price;
-        private string aFirstName;
-        private string aLastName;
-        private bool isBought = false;
-        private bool isPrinted = false;
+        private static int total = 0;
+        //private bool isBought = false;
+        //private bool isPrinted = false;
 
-        public string ISBN
+        public PrintEdit(string name, string Title, float Price, int Year, int Circul) : base(name)
         {
-            get => isbn;
-            set => isbn = value;
+            total += Circul;
+
+            title = Title;
+            price = Price;
+            year = Year;
+            circul = Circul;
         }
 
         public int Year
@@ -46,16 +49,12 @@ namespace lab_5
             set => price = value;
         }
 
-        public string AFirstName
-        {
-            get => aFirstName;
-            set => aFirstName = value;
-        }
+        
 
-        public string ALastName
+        public override void Info()
         {
-            get => aLastName;
-            set => aLastName = value;
+            Console.WriteLine();
+            Console.WriteLine($"Книга '{0}'" + Title + " Издательство " + Name);
         }
     }
 }

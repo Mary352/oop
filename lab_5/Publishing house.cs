@@ -8,6 +8,10 @@ namespace lab_5
     {
         private string name;
         
+        public PublHouse(string Name)
+        {
+            name = Name;
+        }
 
         public string Name
         {
@@ -15,5 +19,9 @@ namespace lab_5
             set => name = value;
         }
 
+        public override void Info()
+        {
+            Console.WriteLine("Издательство " + name);
+        }
     }
 }
