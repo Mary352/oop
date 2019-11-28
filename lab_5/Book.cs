@@ -10,7 +10,7 @@ namespace lab_5
         private string aLastName;
         private static int total = 0;
 
-        public Book(string name, string title, float price, int year, int circul, string AFirName, string ALastName) : base(name, title, price, year, circul)
+        public Book(string name, string title, double price, int year, int circul, string AFirName, string ALastName) : base(name, title, price, year, circul)
         {            
             Title = title;
             Price = price;
@@ -48,7 +48,6 @@ namespace lab_5
 
         public override string ToString()
         {
-            Console.WriteLine(base.ToString());
             return $"Издательство: {Name}\nНазвание книги: {Title}\nАвтор: {aLastName} {aFirstName}\nГод издания: {Year}\nЦена: {Price}\nТираж: {Circul}\n";
         }
     }

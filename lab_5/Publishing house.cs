@@ -39,7 +39,6 @@ namespace lab_5
 
         public override string ToString()
         {
-            Console.WriteLine(base.ToString());
             return $"Издательство: {name}\n";
         }
     }

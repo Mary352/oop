@@ -9,7 +9,7 @@ namespace lab_5
         private int month;
         private static int total = 0;
 
-        public Magazine(string name, string title, float price, int year, int circul, int Month) : base(name, title, price, year, circul)
+        public Magazine(string name, string title, double price, int year, int circul, int Month) : base(name, title, price, year, circul)
         {
             Title = title;
             Price = price;
@@ -34,7 +34,6 @@ namespace lab_5
 
         public override string ToString()
         {
-            Console.WriteLine(base.ToString());
             return $"Издательство: {Name}\nНазвание журнала: {Title}\nДата издания: {month}/{Year}\nЦена: {Price}\nТираж: {Circul}\n";
         }
     }
