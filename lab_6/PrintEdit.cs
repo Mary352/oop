@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab_5
 {
-    class PrintEdit : PublHouse
+    partial class PrintEdit : PublHouse
     {
         
         private int year;
@@ -48,15 +48,6 @@ namespace lab_5
             set => price = value;
         }        
 
-        public override void Info()
-        {
-            Console.WriteLine();
-            Console.WriteLine($"Наименование печатного издания '{0}'" + title + " Издательство " + Name + "Год издания " + year);
-        }
-
-        public override string ToString()
-        {            
-            return $"Издательство: {Name}\nНаименование печатного издания: {title}\nГод издания: {year}\nЦена: {price}\nТираж: {circul}\n";
-        }
+        
     }
 }

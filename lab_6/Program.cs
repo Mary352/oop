@@ -28,7 +28,7 @@ namespace lab_5
 
         }
 
-        struct Library
+        struct LIBRARY
         {
             private Book[] books;
             private SchoolBook[] sbooks;
@@ -36,7 +36,7 @@ namespace lab_5
             private static int count;
             private static double sum;
 
-            public Library(Book[] books, SchoolBook[] sbooks, Magazine[] mags, int Count = 0, double Sum = 0)
+            public LIBRARY(Book[] books, SchoolBook[] sbooks, Magazine[] mags, int Count = 0, double Sum = 0)
             {
                 this.books = books;
                 this.sbooks = sbooks;
@@ -115,7 +115,7 @@ namespace lab_5
             SchoolBook[] sbooks = new SchoolBook[] { sb2, sb3 };
             Magazine[] mags = new Magazine[] { m1, m2, m3 }; 
             
-            Library lib = new Library(books, sbooks, mags);
+            LIBRARY lib = new LIBRARY(books, sbooks, mags);
 
             lib.DisplayBooks(2014);
             Console.WriteLine($"Количество учебников в библиотеке: {lib.NumSBooks()}");
