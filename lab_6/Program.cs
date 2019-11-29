@@ -4,6 +4,30 @@ namespace lab_5
 {
     class Program
     {
+        enum Choice
+        {
+            Book = 1,
+            SCHOOLBOOK,
+            MAGAZINE
+        }
+
+        static void Choose(Choice ch)
+        {
+            switch (ch)
+            {
+                case Choice.Book:
+                    Console.WriteLine("Вы выбрали книгу");
+                    break;
+                case Choice.SCHOOLBOOK:
+                    Console.WriteLine("Вы выбрали учебник");
+                    break;
+                case Choice.MAGAZINE:
+                    Console.WriteLine("Вы выбрали журнал");
+                    break;
+            }
+
+        }
+
         struct Library
         {
             private Book[] books;
@@ -67,6 +91,8 @@ namespace lab_5
 
                 return sum;
             }
+
+            
         }
         
         static void Main(string[] args)
@@ -93,8 +119,10 @@ namespace lab_5
 
             lib.DisplayBooks(2014);
             Console.WriteLine($"Количество учебников в библиотеке: {lib.NumSBooks()}");
-            Console.WriteLine($"Суммарная стоимость изданий в библиотеке: {lib.SumPrice()}");
+            Console.WriteLine($"Суммарная стоимость изданий в библиотеке: {lib.SumPrice()}\n");
 
+            Choose(Choice.Book);
+            Choose(Choice.MAGAZINE);
         }
     }
 }
