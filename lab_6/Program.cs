@@ -67,31 +67,10 @@ namespace lab_5
 
                 return sum;
             }
-
-            //public Book BOOKS
-            //{
-            //    get => books[10];
-            //    set => books[10] = value;
-            //}
-
-            //public SchoolBook SBOOKS
-            //{
-            //    get => sbooks;
-            //    set => sbooks = value;
-            //}
-
-            //public Magazine MAGS
-            //{
-            //    get => mags;
-            //    set => mags = value;
-            //}
         }
         
         static void Main(string[] args)
         {
-            //Person p1 = new Person("Анна", "Сергеева", 26);
-            //PublHouse ph = new PublHouse("Аверсев");
-            //IPH_Person a2 = new Author("Александр", "Сколов", 37, "Философия. Курс лекций");
 
             Book b1 = new Book("АСТ", "Виновато море", 14.29, 2019, 3000, "Люси", "Кларк");
             Book b2 = new Book("АСТ", "Код да Винчи", 11.77, 2017, 5400, "Дэн", "Браун");
