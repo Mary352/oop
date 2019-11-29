@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab_5
 {
-    class Magazine : PrintEdit
+    class Magazine : PrintEdit, IPH_Person
     {
         private int month;
         private static int total = 0;
