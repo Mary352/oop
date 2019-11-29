@@ -38,7 +38,7 @@ namespace lab_5
         public override void Info()
         {
             char init = aFirstName[0];
-            Console.WriteLine($"Книга '{Title}'\nАвтор: {aFirstName}. {aLastName}");
+            Console.WriteLine($"Книга '{Title}'\nАвтор: {init}.{aLastName}\n");
         }
 
         public override int Count()
