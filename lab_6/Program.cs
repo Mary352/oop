@@ -123,6 +123,24 @@ namespace lab_5
 
             Choose(Choice.Book);
             Choose(Choice.MAGAZINE);
+
+            Library<PrintEdit> libra = new Library<PrintEdit>();
+
+            libra.AddEdit(b1);
+            libra.AddEdit(sb2);
+            libra.AddEdit(m1);            
+            libra.AddEdit(b2);
+            libra.AddEdit(b3);
+            libra.AddEdit(m2);
+            libra.AddEdit(b4);
+            libra.AddEdit(m3);
+            libra.AddEdit(sb3);
+
+            LibControl lc = new LibControl();
+            lc.CountSBooks(libra);
+            lc.SeeSomeBooks(2014, libra);
+            lc.TotalSum(libra);
+
         }
     }
 }

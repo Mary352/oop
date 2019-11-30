@@ -4,43 +4,39 @@ using System.Text;
 
 namespace lab_5
 {
-    class Library<PrintEdit>
+    class Library<T>
     {
-        private List<Book> liBooks;
-        private List<Magazine> liMags;
-        private List<SchoolBook> liSBooks;
-        private static int count = 0;
+        private List<PrintEdit> list;
 
-        public void AddBook(Book b)
+        public List<PrintEdit> LIST
         {
-            liBooks.Add(b);
+            get => list;
+            set => list = value;
         }
+        //private static int count = 0;
 
-        public void AddSBook(SchoolBook sb)
+        //private List<Book> liBooks;
+        //private List<Magazine> liMags;
+        //private List<SchoolBook> liSBooks;
+
+        public void AddEdit(PrintEdit pe)
         {
-            liSBooks.Add(sb);
-            count++;
+            list.Add(pe);
         }
 
-        public void AddMag(Magazine m)
-        {
-            liMags.Add(m);
-        }
+        //public void AddBook(Book b)
+        //{
+        //    list.Add(b);
+        //}
 
-        public void SeeSomeBooks(int year)
-        {            
-            foreach (Book b in liBooks)
-            {                
-                if (b.Year >= year)
-                {
-                    Console.WriteLine(b);
-                }                
-            }
-        }
+        //public void AddSBook(SchoolBook sb)
+        //{
+        //    list.Add(sb);
+        //}
 
-        public int CountSBooks()
-        {
-            return count;
-        }
+        //public void AddMag(Magazine m)
+        //{
+        //    list.Add(m);
+        //}
     }
 }
