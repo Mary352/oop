@@ -16,6 +16,9 @@ namespace lab_5
             count++;
         }
 
+        public PublHouse()
+        { }
+
         public string Name
         {
             get => name;

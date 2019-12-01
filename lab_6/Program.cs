@@ -25,7 +25,6 @@ namespace lab_5
                     Console.WriteLine("Вы выбрали журнал");
                     break;
             }
-
         }
 
         struct LIBRARY
@@ -103,16 +102,15 @@ namespace lab_5
             Book b3 = new Book("Свет", "Веселье только начинается...", 12.68, 2013, 6785, "Лилиан", "Уайд");
             Book b4 = new Book("Барс", "Зимний ветер", 15.36, 2014, 8425, "Алиса", "Чудная");
 
-            //SchoolBook sb1 = new SchoolBook("Ветер", "Математика", 6.88, 2015, 250000, "Анастасия", "Гриненко", 5);
-            SchoolBook sb2 = new SchoolBook("Белый ветер", "Геометрия", 5.98, 2016, 150000, "Анастасия", "Гриненко", 8);
-            SchoolBook sb3 = new SchoolBook("Белый ветер", "Геометрия", 5.98, 2016, 150000, "Анастасия", "Гриненко", 8);
+            SchoolBook sb1 = new SchoolBook("Ветер", "Математика", 6.88, 2015, 250000, "Анастасия", "Гриненко", 5);
+            SchoolBook sb2 = new SchoolBook("Белый ветер", "Геометрия", 5.98, 2013, 150000, "Анастасия", "Гриненко", 8);
             
             Magazine m1 = new Magazine("Альфа-книга", "Вокруг света", 2.57, 2019, 9585, 5);
             Magazine m2 = new Magazine("Дождь", "Один дома", 2.46, 2018, 9655, 12);
             Magazine m3 = new Magazine("Факел", "Банзай. Японский кроссворд", 1.99, 2010, 9655, 8);
 
             Book[] books = new Book[] { b1, b2, b3, b4 };
-            SchoolBook[] sbooks = new SchoolBook[] { sb2, sb3 };
+            SchoolBook[] sbooks = new SchoolBook[] { sb2, sb1 };
             Magazine[] mags = new Magazine[] { m1, m2, m3 }; 
             
             LIBRARY lib = new LIBRARY(books, sbooks, mags);
@@ -124,22 +122,22 @@ namespace lab_5
             Choose(Choice.Book);
             Choose(Choice.MAGAZINE);
 
-            Library<PrintEdit> libra = new Library<PrintEdit>();
+            Library libra = new Library();
 
-            libra.AddEdit(b1);
-            libra.AddEdit(sb2);
-            libra.AddEdit(m1);            
-            libra.AddEdit(b2);
-            libra.AddEdit(b3);
-            libra.AddEdit(m2);
-            libra.AddEdit(b4);
-            libra.AddEdit(m3);
-            libra.AddEdit(sb3);
+            libra.AddBook(b1);
+            libra.AddSBook(sb2);
+            libra.AddMag(m1);            
+            libra.AddBook(b2);
+            libra.AddBook(b3);
+            libra.AddMag(m2);
+            libra.AddBook(b4);
+            libra.AddMag(m3);
+            libra.AddSBook(sb1);
 
-            LibControl lc = new LibControl();
-            lc.CountSBooks(libra);
+            LibControl lc = new LibControl();            
             lc.SeeSomeBooks(2014, libra);
-            lc.TotalSum(libra);
+            Console.WriteLine($"Количество учебников в библиотеке: {lc.CountSBooks(libra)}");
+            Console.WriteLine($"Суммарная стоимость изданий в библиотеке: {lc.TotalSum(libra)}\n");
 
         }
     }

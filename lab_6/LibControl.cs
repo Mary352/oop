@@ -7,39 +7,41 @@ namespace lab_5
     class LibControl
     {
         private static int count = 0;
-        private static int sum = 0;
+        private static double sum = 0;
 
-        public void SeeSomeBooks(int year, Library<PrintEdit> lib)
+        public void SeeSomeBooks(int year, Library lib)
         {
-            foreach (Book b in lib.LIST)
+            Console.WriteLine($"\nКниги вышедшие не ранее {year} года:");
+
+            foreach (PrintEdit pe in lib.LIST)
             {
-                if (b.Year >= year)
+                if (pe is Book && !(pe is SchoolBook))
                 {
-                    Console.WriteLine(b);                    
+                    if (pe.Year >= year)
+                    {
+                        Console.WriteLine(pe);
+                    }
                 }
 
-                sum += b.Circul;
+                sum += pe.Price;
             }
         }
 
-        public int CountSBooks(Library<PrintEdit> lib)
+        public int CountSBooks(Library lib)
         {
-            foreach (SchoolBook sb in lib.LIST)
+            foreach (PrintEdit pe in lib.LIST)
             {
-                count++;
-                sum += sb.Circul;
+                if (pe is SchoolBook)
+                {
+                    count++;
+                }
             }
 
             return count;
         }
 
-        public int TotalSum(Library<PrintEdit> lib)
+        public double TotalSum(Library lib)
         {
-            foreach (Magazine m in lib.LIST)
-            {
-                sum += m.Circul;
-            }
-
             return sum;
         }
 

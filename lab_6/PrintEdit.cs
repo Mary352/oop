@@ -12,7 +12,8 @@ namespace lab_5
         private string title;
         private double price;
         private static int total = 0;
-
+        public PrintEdit()
+        { }
         public PrintEdit(string name, string Title, double Price, int Year, int Circul) : base(name)
         {
             total += Circul;
