@@ -127,7 +127,7 @@ namespace lab_5
 
             //--------Класс--------------------------------------------------------------------
             Library libra = new Library();
-
+            
             libra.AddBook(b1);
             libra.AddSBook(sb2);
             libra.AddMag(m1);            
@@ -142,6 +142,11 @@ namespace lab_5
             lc.SeeSomeBooks(2014, libra);
             Console.WriteLine($"Количество учебников в библиотеке: {lc.CountSBooks(libra)}");
             Console.WriteLine($"Суммарная стоимость изданий в библиотеке: {lc.TotalSum(libra)}\n");
+
+            libra.SeeAll();
+            libra.TakeBook(b3);
+            libra.SeeAll();
+
         }
     }
 }
