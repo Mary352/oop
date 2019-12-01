@@ -16,8 +16,6 @@ namespace lab_5
 
         public SchoolBook(string name, string title, double price, int year, int circul, string aFirName, string aLastName, int Clas) : base(name, title, price, year, circul, aFirName, aLastName)
         {
-            //total += Circul;
-
             Title = title;
             Price = price;
             Year = year;

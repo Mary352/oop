@@ -95,8 +95,8 @@ namespace lab_5
         }
         
         static void Main(string[] args)
-        {
-
+        {   
+            // Создание объектов
             Book b1 = new Book("АСТ", "Виновато море", 14.29, 2019, 3000, "Люси", "Кларк");
             Book b2 = new Book("АСТ", "Код да Винчи", 11.77, 2017, 5400, "Дэн", "Браун");
             Book b3 = new Book("Свет", "Веселье только начинается...", 12.68, 2013, 6785, "Лилиан", "Уайд");
@@ -109,6 +109,7 @@ namespace lab_5
             Magazine m2 = new Magazine("Дождь", "Один дома", 2.46, 2018, 9655, 12);
             Magazine m3 = new Magazine("Факел", "Банзай. Японский кроссворд", 1.99, 2010, 9655, 8);
 
+            //--------Структура--------------------------------------------------------------------
             Book[] books = new Book[] { b1, b2, b3, b4 };
             SchoolBook[] sbooks = new SchoolBook[] { sb2, sb1 };
             Magazine[] mags = new Magazine[] { m1, m2, m3 }; 
@@ -118,10 +119,13 @@ namespace lab_5
             lib.DisplayBooks(2014);
             Console.WriteLine($"Количество учебников в библиотеке: {lib.NumSBooks()}");
             Console.WriteLine($"Суммарная стоимость изданий в библиотеке: {lib.SumPrice()}\n");
+            //-------------------------------------------------------------------------------------
 
+            // Перечисление
             Choose(Choice.Book);
             Choose(Choice.MAGAZINE);
 
+            //--------Класс--------------------------------------------------------------------
             Library libra = new Library();
 
             libra.AddBook(b1);
@@ -138,7 +142,6 @@ namespace lab_5
             lc.SeeSomeBooks(2014, libra);
             Console.WriteLine($"Количество учебников в библиотеке: {lc.CountSBooks(libra)}");
             Console.WriteLine($"Суммарная стоимость изданий в библиотеке: {lc.TotalSum(libra)}\n");
-
         }
     }
 }
