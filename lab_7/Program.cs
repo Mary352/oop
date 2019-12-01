@@ -232,7 +232,6 @@ namespace lab_5
                 Console.WriteLine($"Количество учебников в библиотеке: {lc.CountSBooks(libra)}");
                 Console.WriteLine($"Суммарная стоимость изданий в библиотеке: {lc.TotalSum(libra)}\n");
 
-               // libra.SeeAll();
                 libra.TakeBook(b3);
                 libra.SeeAll();
             }
