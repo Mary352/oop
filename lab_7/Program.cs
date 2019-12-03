@@ -112,8 +112,8 @@ namespace lab_5
                 Magazine m2 = new Magazine("Дождь", "Один дома", 2.46, 2018, 9655, 12);
                 Magazine m3 = new Magazine("Факел", "Банзай. Японский кроссворд", 1.99, 2010, 9655, 8);
 
-               
-               
+
+
                 //Book[] books = new Book[] { b1, b2, b3, b4 };
                 //SchoolBook[] sbooks = new SchoolBook[] { sb2, sb1 };
                 //Magazine[] mags = new Magazine[] { m1, m2, m3 };
@@ -139,8 +139,9 @@ namespace lab_5
                 //Debug.Assert(b6.AFirstName != "Светлана", "Введите другое имя");
 
                 /*OverflowException*/
-                SchoolBook sb4 = new SchoolBook("Белый ветер", "Геометрия", -5.98, 2013, 150000, "Анастасия", "Гриненко", 8);
+                //SchoolBook sb4 = new SchoolBook("Белый ветер", "Геометрия", -5.98, 2013, 150000, "Анастасия", "Гриненко", 8);
                 //------------------------------------------------------------------------------------------------------------------
+
 
                 Choose(Choice.Book);
                 Choose(Choice.MAGAZINE);
@@ -166,35 +167,31 @@ namespace lab_5
                 libra.SeeAll();
                 libra.TakeBook(b3);
                 libra.SeeAll();
+
             }
             catch (Exceptions.DataEx.MonthEx ex)
             {
-                var LineNumber = new StackTrace(ex, true).GetFrame(0).GetFileLineNumber();
                 Console.WriteLine("Ошибка: " + ex.Message);
                 Console.WriteLine("Некорректное значение: " + ex.Value);
-                Console.WriteLine("Строка: " + LineNumber);
+                Console.WriteLine(ex.TargetSite);
             }
             catch (Exceptions.DataEx.YearEx ex)
-            {
-                var LineNumber = new StackTrace(ex, true).GetFrame(0).GetFileLineNumber();
+            {                
                 Console.WriteLine("Ошибка: " + ex.Message);
                 Console.WriteLine("Некорректное значение: " + ex.Value);
-                Console.WriteLine("Строка: " + LineNumber);
+                Console.WriteLine(ex.TargetSite);
             }
             
             catch (Exceptions.AgeEx ex)
             {
-
-                var LineNumber = new StackTrace(ex, true).GetFrame(0).GetFileLineNumber();
                 Console.WriteLine("Ошибка: " + ex.Message);
-                //Console.WriteLine(ExceptionDispatchInfo.Capture(ex).SourceException);
-                Console.WriteLine("Строка: " + LineNumber);
+                Console.WriteLine(ex.TargetSite);
             }
-            catch(OverflowException ex)
+            catch (OverflowException ex)
             {
-                var LineNumber = new StackTrace(ex, true).GetFrame(0).GetFileLineNumber();
                 Console.WriteLine("Ошибка: " + ex.Message);
-                Console.WriteLine("Строка: " + LineNumber);
+                Console.WriteLine(ex.TargetSite);
+
             }
             catch
             {
