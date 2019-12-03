@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace lab_4__recovery_
+namespace lab_8
 {
 
     class Program

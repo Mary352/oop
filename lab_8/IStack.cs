@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab_8
 {
-    interface IStack<T>
+    public interface IStack<T>
     {
         public void AddEl(T data);
         public void DelEl();
