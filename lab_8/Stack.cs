@@ -6,7 +6,7 @@ namespace lab_8
 {
     public class CollectionType<U>
     {
-        public class Stack<T> : IStack<T> where T : struct
+        public class Stack<T> : IStack<T> where T : new()
         {           
             private List<T> elements;
             private static int count;          
@@ -38,7 +38,7 @@ namespace lab_8
                 }
 
                 elements.RemoveRange(0, elements.Count-1);
-                Console.WriteLine("\nстек пуст");
+                Console.WriteLine("стек пуст\n");
             }            
         }
     }
