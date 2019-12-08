@@ -1,6 +1,7 @@
 *.pdf
 *.docx
 /сдано
+*.txt
 
 
 ## Ignore Visual Studio temporary files, build results, and
