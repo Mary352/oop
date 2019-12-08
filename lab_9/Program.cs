@@ -32,6 +32,16 @@ namespace lab_9
 
             game.Heal -= h3.OnHeal;
             game.heal(254);
+
+            string str = "Поскольку строка является неизменной, все ее методы " +
+                "возвращают новое значения, оставляя исходную строку нетронутой. " +
+                "Помимо указанных выше строка имеет следующие методы";
+            Console.WriteLine();
+            Str str1 = new Str();
+
+            str1.DeleteMarks(str);
+            str1.SortABC(str);
+            str1.UpLow(str);
         }
     }
 }
