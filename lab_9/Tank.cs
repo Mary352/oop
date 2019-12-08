@@ -12,16 +12,16 @@ namespace lab_9
             name = Name;
         }
 
-        public void OnAttack(int dmg)
+        public void OnAttack()
         {
             Console.WriteLine(name);
-            Console.WriteLine($"{-dmg}");
+            //Console.WriteLine($"{-dmg}");
         }
 
-        public void OnHeal(int up)
+        public void OnHeal()
         {
-            Console.WriteLine(name);
-            Console.WriteLine("Полностью восстановлено");
+            //Console.WriteLine(name);
+            Console.WriteLine($"{name} - полностью восстановлено");
         }
     }
 }

@@ -4,30 +4,45 @@ using System.Text;
 
 namespace lab_9
 {
-    //public delegate void ATTACK(int damage);
-    //public delegate void HEAL(int up);
-    public delegate void Do(int pts);
+    //public delegate void ATTACK();
+    //public delegate void HEAL();
+
+    public delegate void Do();
 
     class Game
     {
         //public event ATTACK Attack;
-        //public void attack(int d)
+        //public void attack()
         //{
-        //    Console.WriteLine($"Урон - {d}");
+        //    Console.WriteLine($"Урон:");
+        //    if(Attack != null)
+        //    {
+        //        Attack();
+        //    }
         //}
+
         //public event HEAL Heal;
-        //public void 
-        
+        //public void heal()
+        //{
+        //    Console.WriteLine($"\nВосстановление: ");
+        //    Heal?.Invoke();
+        //}
+
         public event Do Attack;
         public void attack()
         {
-            Console.Write($"Урон - ");
+            Console.WriteLine($"Урон:");
+            if (Attack != null)
+            {
+                Attack();
+            }
         }
 
         public event Do Heal;
         public void heal()
         {
-            Console.Write($"Восстановление - ");
+            Console.WriteLine($"\nВосстановление: ");
+            Heal?.Invoke();
         }
 
     }
