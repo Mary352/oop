@@ -42,6 +42,8 @@ namespace lab_9
             str1.DeleteMarks(str);
             str1.SortABC(str);
             str1.UpLow(str);
+            str1.DelSomeWords(str);
+            str1.FirstLastHigh(str);
         }
     }
 }
