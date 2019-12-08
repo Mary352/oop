@@ -20,13 +20,6 @@ namespace lab_9
             Tank t4 = new Tank("СУ-152");
             Tank t5 = new Tank("Т-127");
 
-            //game.Attack += new ATTACK(h1.OnAttack);
-            //game.Heal += new HEAL(t1.OnHeal);
-            //game.Attack += new ATTACK(t3.OnAttack);
-            //game.Attack += new ATTACK(h5.OnAttack);
-            //game.Heal += new HEAL(h3.OnHeal);
-            //game.Attack += new ATTACK(t5.OnAttack);
-
             game.Attack += new Do(h1.OnAttack);
             game.Heal += new Do(t1.OnHeal);
             game.Attack += new Do(t3.OnAttack);
@@ -34,8 +27,11 @@ namespace lab_9
             game.Heal += new Do(h3.OnHeal);
             game.Attack += new Do(t5.OnAttack);
 
-            game.attack();
-            game.heal();
+            game.attack(1000);
+            game.heal(237);
+
+            game.Heal -= h3.OnHeal;
+            game.heal(254);
         }
     }
 }

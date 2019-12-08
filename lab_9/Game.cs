@@ -4,45 +4,27 @@ using System.Text;
 
 namespace lab_9
 {
-    //public delegate void ATTACK();
-    //public delegate void HEAL();
-
-    public delegate void Do();
+    public delegate void Do(int pts);
 
     class Game
     {
-        //public event ATTACK Attack;
-        //public void attack()
-        //{
-        //    Console.WriteLine($"Урон:");
-        //    if(Attack != null)
-        //    {
-        //        Attack();
-        //    }
-        //}
-
-        //public event HEAL Heal;
-        //public void heal()
-        //{
-        //    Console.WriteLine($"\nВосстановление: ");
-        //    Heal?.Invoke();
-        //}
-
         public event Do Attack;
-        public void attack()
+        public void attack(int dmg)
         {
-            Console.WriteLine($"Урон:");
-            if (Attack != null)
+            Console.WriteLine($"\tУРОН");
+
+            //если есть обработчик события, то вызвать событие
+            if (Attack != null)  
             {
-                Attack();
+                Attack(dmg);
             }
         }
 
         public event Do Heal;
-        public void heal()
+        public void heal(int up)
         {
-            Console.WriteLine($"\nВосстановление: ");
-            Heal?.Invoke();
+            Console.WriteLine($"\n   ВОССТАНОВЛЕНИЕ");
+            Heal?.Invoke(up);
         }
 
     }

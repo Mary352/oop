@@ -13,23 +13,16 @@ namespace lab_9
             nick = NICK;
         }
 
-        //public string Nick
-        //{
-        //    get => nick;
-        //    set => nick = value;
-        //}
-
-        public void OnAttack()
+        public void OnAttack(int dmg)
         {
-            Console.WriteLine(nick);
+            dmg = (dmg / 2) + 21;
 
-            //Console.WriteLine($"Двойной урон {-dmg}");
+            Console.WriteLine($"{nick}: двойной урон {-dmg}");
         }
 
-        public void OnHeal()
+        public void OnHeal(int up)
         {
-            Console.WriteLine(nick);
-            //Console.WriteLine($"+{up}");
+            Console.WriteLine($"{nick}: +{up}");
         }
     }
 }
