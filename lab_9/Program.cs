@@ -31,6 +31,9 @@ namespace lab_9
             game.heal(237);
 
             game.Heal -= h3.OnHeal;
+            game.Heal += new Do(h2.OnHeal);
+            game.Heal += new Do(h4.OnHeal);
+
             game.heal(254);
 
             string str = "Поскольку строка является неизменной, все ее методы " +
@@ -38,12 +41,16 @@ namespace lab_9
                 "Помимо указанных выше строка имеет следующие методы";
             Console.WriteLine();
             Str str1 = new Str();
+            static void Show(Func<string, string> F1, Func<string, string> F2, Func<string, string> F3, string stri) => Console.WriteLine(F3(F2(F1(stri))));
 
-            str1.DeleteMarks(str);
-            str1.SortABC(str);
-            str1.UpLow(str);
-            str1.DelSomeWords(str);
-            str1.FirstLastHigh(str);
+            Console.WriteLine(str1.DelSomeWords(str));
+            //str1.DeleteMarks(str);
+            //str1.SortABC(str);
+            //str1.UpLow(str);
+            //str1.DelSomeWords(str);
+            //str1.FirstLastHigh(str);
+
+            Show(str1.DelSomeWords, str1.UpLow, str1.DeleteMarks, str);
         }
     }
 }

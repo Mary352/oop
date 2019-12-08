@@ -6,7 +6,7 @@ namespace lab_9
 {
     class Str
     {
-        public void DeleteMarks(string str)
+        public string DeleteMarks(string str)
         {
             string[] str_arr = str.Split(new char[] { ' ', ',', '.' });
             string item = str_arr[0];
@@ -19,22 +19,25 @@ namespace lab_9
                 }
             }
             Console.WriteLine(item);
+            return item;
         }
 
-        public void SortABC(string str)
+        public string[] SortABC(string str)
         {
-            string[] str_arr = str.Split(new char[] { ' ', ',', '.' });
+            string[] str_arr = str.Split(new char[] { ' ', ',', '.' }, StringSplitOptions.RemoveEmptyEntries);
             Array.Sort(str_arr);
 
-            foreach (var item in str_arr)
-            {
-                Console.WriteLine(item);
-            }
+            return str_arr;
+            //Console.WriteLine();
+            //foreach (var item in str_arr)
+            //{
+            //    Console.WriteLine(item);
+            //}
         }
 
-        public void UpLow(string str)
+        public string UpLow(string str)
         {
-            string[] str_arr = str.Split(' ');
+            string[] str_arr = str.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             string item = str_arr[0];
 
             for (int i = 0; i < str_arr.Length; i++)
@@ -62,14 +65,14 @@ namespace lab_9
                     item += s;
                 }
             }
-
-            Console.WriteLine();
-            Console.WriteLine(item);
+            return item;
+            //Console.WriteLine();
+            //Console.WriteLine(item);
         }
 
-        public void DelSomeWords(string str)
+        public string DelSomeWords(string str)
         {
-            string[] str_arr = str.Split(new char[] { ' ', ',', '.' });
+            string[] str_arr = str.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             string item = str_arr[0];
 
             // удаление слов, имеющих чётное количество букв
@@ -88,14 +91,18 @@ namespace lab_9
                     item += s;
                 }
             }
-
-            Console.WriteLine();
-            Console.WriteLine(item);
+            return item;
+            //Console.WriteLine();
+            //Console.WriteLine(item);
         }
 
-        public void FirstLastHigh(string str)
+        public string FirstLastHigh(string str)
         {
-
+            str = str.Insert(0, "SurprizE ");
+            str = str.Insert(str.Length, " To be continued...");
+            return str;
+            //Console.WriteLine();
+            //Console.WriteLine(str);
         }
     }
 }
