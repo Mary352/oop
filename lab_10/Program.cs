@@ -100,6 +100,86 @@ namespace lab_10
                 Console.WriteLine("no '5' in collection");
             }
 
+            //-----------------------------------------------------------------
+            Console.WriteLine("\n--------------------------------------------------------------------");
+
+            Console.WriteLine("LinkedList user");
+            LinkedList<Person> l_listu = new LinkedList<Person>();
+
+            l_listu.AddFirst(new Person("Maggi", "Willson", 54));
+            l_listu.AddLast(new Person("Sophie", "Brown", 25));
+            l_listu.AddFirst(new Person("Lina", "Miller", 31));
+            l_listu.AddLast(new Person("Samanta", "Goodman", 35));
+            l_listu.AddLast(new Person("Sophie", "Brown", 25));
+            l_listu.AddLast(new Person("Samanta", "Goodman", 35));
+            l_listu.AddLast(new Person("Maggi", "Willson", 54));
+            
+            Console.WriteLine("Before: ");
+            foreach (var item in l_listu)
+            {
+                Console.WriteLine(item);
+            }
+
+            while (l_listu.Count != 4)
+            {
+                l_listu.RemoveLast();
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("After: ");
+            foreach (var item in l_listu)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+
+            LinkedListNode<Person> node2 = l_listu.First;
+            node = node.Next;
+
+            l_listu.AddBefore(node2, new Person(1));
+            l_listu.AddAfter(node2, new Person('j'));
+            node = node.Next;
+            node = node.Next;
+            l_listu.AddAfter(node2, new Person("ndd"));
+
+
+            Console.WriteLine("+new elems: ");
+            foreach (var item in l_listu)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("\tHashSet");
+            HashSet<Person> hsu = new HashSet<Person>();
+
+            foreach (Person item in l_listu)
+            {
+                hsu.Add(item);
+            }
+
+            Console.WriteLine("Elems: ");
+            foreach (Person item in hsu)
+            {
+                Console.WriteLine(item);
+            }
+            
+            if (hsu.Contains(new Person(2)))
+            {
+                Console.WriteLine("Collection contains this object");
+            }
+            else
+            {
+                Console.WriteLine("no such object in collection");
+            }
+
+            if (hsu.Contains(new Person("Diana", "Goodman", 46)))
+            {
+                Console.WriteLine("Collection contains this object");
+            }
+            else
+            {
+                Console.WriteLine("No such object in collection");
+            }
         }
     }
 }

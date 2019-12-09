@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace lab_5
+namespace lab_10
 {
     class Person
     {
@@ -15,6 +15,27 @@ namespace lab_5
             firstName = FirstName;
             lastName = LastName;
             age = Age;
+        }
+
+        public Person(int num)
+        {
+            firstName = "Nina";
+            lastName = "Smith";
+            age = 23;
+        }
+
+        public Person(string str)
+        {
+            firstName = "Lewis";
+            lastName = "Carroll";
+            age = 89;
+        }
+
+        public Person(char c)
+        {
+            firstName = "Natalie";
+            lastName = "Brooks";
+            age = 20;
         }
 
         public string FirstName
