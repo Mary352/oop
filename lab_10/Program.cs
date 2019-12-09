@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+
 
 namespace lab_10
 {
@@ -180,6 +183,35 @@ namespace lab_10
             {
                 Console.WriteLine("No such object in collection");
             }
+
+            Console.WriteLine("\n\tObservableCollection");
+            ObservableCollection<Person> oc = new ObservableCollection<Person>();
+
+            oc.CollectionChanged += CollectionChanged;
+
+            oc.Add(new Person(5));
+            oc.Add(new Person('n'));
+            oc.Add(new Person("bshd"));
+
         }
+
+        private static void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) 
+        { 
+            switch(e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    Person newPer = e.NewItems[0] as Person;
+                    Console.WriteLine("New object added:");
+                    Console.WriteLine(newPer.FirstName);
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    Person delPer = e.NewItems[0] as Person;
+                    Console.WriteLine("Object was deleted: ");
+                    Console.WriteLine(delPer);
+
+                    break;
+            }
+        }
+
     }
 }
