@@ -6,5 +6,16 @@ namespace lab_10
 {
     class Student
     {
+        private string name;
+        private string surname;
+        private int ID;
+
+        public Student()
+        {
+            name = "Alice";
+            surname = "Winner";
+            ID = 54123450;
+        }
+      
     }
 }
