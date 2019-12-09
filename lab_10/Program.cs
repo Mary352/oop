@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace lab_10
 {
     class Program
     {
-        public void Show()
-
         static void Main(string[] args)
         {
+            Console.WriteLine("\tArrayList");
             ArrayList a_list = new ArrayList();
 
             a_list.AddRange(new int[] { 5, 10, 23, 108, 4 });
@@ -25,6 +25,58 @@ namespace lab_10
             }
 
             Console.WriteLine("Index of 23: " + a_list.IndexOf(23));
+
+
+            Console.WriteLine("\n\tLinkedList");
+            LinkedList<char> l_list = new LinkedList<char>();
+
+            l_list.AddFirst('c');
+            l_list.AddLast('n');
+            l_list.AddFirst('h');
+            l_list.AddLast('u');
+            l_list.AddLast('a');
+            l_list.AddLast('s');
+            l_list.AddLast('r');
+            l_list.AddLast('t');
+            l_list.AddLast('w');
+            l_list.AddFirst('b');
+            l_list.AddFirst('i');
+            l_list.AddFirst('t');
+
+            Console.Write("Before: ");
+            foreach (var item in l_list)
+            {
+                Console.Write(item + " ");
+            }
+
+            while (l_list.Count != 7)
+            {
+                l_list.RemoveFirst();
+            }
+            Console.WriteLine();
+
+            Console.Write("After: ");
+            foreach (var item in l_list)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+
+            LinkedListNode<char> node = l_list.First;
+            node = node.Next;
+
+            l_list.AddBefore(node, '5');
+            node = node.Next;
+            l_list.AddAfter(node, '7');
+
+            Console.Write("+new elems: ");
+            foreach (var item in l_list)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+
+            HashSet<LinkedListNode<char>> hs = new HashSet<LinkedListNode<char>>();
 
         }
     }
