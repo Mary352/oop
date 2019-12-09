@@ -193,6 +193,11 @@ namespace lab_10
             oc.Add(new Person('n'));
             oc.Add(new Person("bshd"));
 
+            foreach (var item in oc)
+            {
+                Console.WriteLine(item);
+            }
+
         }
 
         private static void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) 
