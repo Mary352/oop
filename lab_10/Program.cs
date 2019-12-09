@@ -76,7 +76,29 @@ namespace lab_10
             }
             Console.WriteLine();
 
-            HashSet<LinkedListNode<char>> hs = new HashSet<LinkedListNode<char>>();
+            Console.WriteLine("\n\tHashSet");
+            HashSet<char> hs = new HashSet<char>();
+
+            foreach (char item in l_list)
+            {
+                hs.Add(item);
+            }
+
+            Console.Write("Elems: ");
+            foreach (var item in hs)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+
+            if (hs.Contains('5'))
+            {
+                Console.WriteLine("Collection contains '5'");
+            }
+            else
+            {
+                Console.WriteLine("no '5' in collection");
+            }
 
         }
     }
