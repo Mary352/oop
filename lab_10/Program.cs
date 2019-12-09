@@ -192,12 +192,18 @@ namespace lab_10
             oc.Add(new Person(5));
             oc.Add(new Person('n'));
             oc.Add(new Person("bshd"));
-
-            foreach (var item in oc)
+            
+            foreach (Person item in oc)
             {
                 Console.WriteLine(item);
             }
 
+            oc.RemoveAt(2);
+            Console.WriteLine("Saved objects:");
+            foreach (Person item in oc)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) 
@@ -209,11 +215,11 @@ namespace lab_10
                     Console.WriteLine("New object added:");
                     Console.WriteLine(newPer.FirstName);
                     break;
+
                 case NotifyCollectionChangedAction.Remove:
-                    Person delPer = e.NewItems[0] as Person;
+                    Person delPer = e.OldItems[0] as Person;
                     Console.WriteLine("Object was deleted: ");
                     Console.WriteLine(delPer);
-
                     break;
             }
         }
