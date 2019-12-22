@@ -43,7 +43,7 @@ namespace lab_9
             Str str1 = new Str();
             static void Show(Func<string, string> F1, Func<string, string> F2, Func<string, string> F3, string stri) => Console.WriteLine(F3(F2(F1(stri))));
 
-            Console.WriteLine(str1.DelSomeWords(str));
+            //Console.WriteLine(str1.DelSomeWords(str));
             //str1.DeleteMarks(str);
             //str1.SortABC(str);
             //str1.UpLow(str);
