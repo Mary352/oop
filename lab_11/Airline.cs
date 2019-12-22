@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace lab_3
+namespace lab_11
 {
     public partial class Airline    //объявление
     {
@@ -14,23 +14,21 @@ namespace lab_3
         private TimeSpan departTime;
         private string weekDay;
 
-        //private int g;
-
     }
 
     public partial class Airline    //конструкторы
     {
-        static Airline()
-        {
-            //Airline Zero = new Airline(0, 1);
-            //Airline One = new Airline(1, 1);
+        //static Airline()
+        //{
+        //    //Airline Zero = new Airline(0, 1);
+        //    //Airline One = new Airline(1, 1);
 
-            count = 0;
-            Console.WriteLine("Static constructor first");
+        //    count = 0;
+        //    Console.WriteLine("Static constructor first");
 
-            //Console.WriteLine(Zero.g);
-            //Console.WriteLine(One.g);
-        }
+        //    //Console.WriteLine(Zero.g);
+        //    //Console.WriteLine(One.g);
+        //}
 
         public Airline()
         {
