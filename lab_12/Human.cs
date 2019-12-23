@@ -6,7 +6,7 @@ namespace lab_12
 {
     class Human
     {
-        private string nick;
+        public string nick;
 
         public Human(string NICK)
         {

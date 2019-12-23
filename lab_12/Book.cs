@@ -24,7 +24,8 @@ namespace lab_12
             total += Circul;
         }
 
-
+        public Book()
+        { }
 
         public string AFirstName
         {

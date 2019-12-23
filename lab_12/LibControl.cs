@@ -9,7 +9,7 @@ namespace lab_12
         private static int count = 0;
         private static double sum = 0;
 
-        private void SeeSomeBooks(int year, Library lib)
+        public void SeeSomeBooks(int year, Library lib)
         {
             Console.WriteLine($"\nКниги вышедшие не ранее {year} года:");
 
@@ -27,7 +27,7 @@ namespace lab_12
             }
         }
 
-        public int CountSBooks(Library lib)
+        private int CountSBooks(Library lib)
         {
             foreach (PrintEdit pe in lib.LIST)
             {
