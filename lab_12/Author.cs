@@ -6,7 +6,7 @@ namespace lab_12
 {
     sealed class Author : Person, IPH_Person
     {
-        public string bookTitle;
+        private string bookTitle;
         private static int count = 0;
 
         public Author(string firstName, string lastName, int age, string BookTitle) : base(firstName, lastName, age)
@@ -19,6 +19,8 @@ namespace lab_12
 
             count++;
         }
+
+
 
         public string BookTitle
         {

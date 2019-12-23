@@ -7,8 +7,8 @@ namespace lab_12
 {
     class Book : PrintEdit, IPH_Person
     {
-        public string aFirstName;
-        public string aLastName;
+        private string aFirstName;
+        private string aLastName;
         private static int total = 0;
 
         public Book(string name, string title, double price, int year, int circul, string AFirName, string ALastName) : base(name, title, price, year, circul)

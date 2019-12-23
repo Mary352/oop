@@ -27,5 +27,10 @@ namespace lab_12
             Heal?.Invoke(up);
         }
 
+        public void moveTo(int dmg)
+        {
+            Console.WriteLine("Вы перешли в квадрат " + dmg);
+        }
+
     }
 }

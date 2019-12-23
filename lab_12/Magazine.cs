@@ -9,6 +9,8 @@ namespace lab_12
         private int month;
         private static int total = 0;
 
+        public Magazine()
+        { }
         public Magazine(string name, string title, double price, int year, int circul, int Month) : base(name, title, price, year, circul)
         {
             Title = title;

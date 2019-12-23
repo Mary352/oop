@@ -6,120 +6,58 @@ using System.IO;
 
 namespace lab_12
 {
-    class Reflector<U>
+    class Reflector<U, N> where U : class
     {
         public void WriteFile<T>()
         {
             string filePath = @"D:\3 сем\ООП 3 сем\ЛР\lab_12\file.txt";
-            
+            var flag = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
+
             Type t = typeof(T);
 
             using (StreamWriter sw = new StreamWriter(filePath, false, Encoding.Default))
-            {
-                foreach (FieldInfo fi in t.GetFields())
-                {
-                    //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
+            {                                 //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
+                foreach (FieldInfo fi in t.GetFields(flag))
+                {                    
                     sw.WriteLine("Field name = " + fi.Name);
-
                 }
-
             }
 
             using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Default))
             {
-                foreach (MethodInfo mi in t.GetMethods())
+                foreach (MethodInfo mi in t.GetMethods(flag))
                 {
-                                              //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
                     sw.WriteLine("Method Name = " + mi.Name);
                     foreach (ParameterInfo pr in mi.GetParameters())
                     {
-                        //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
                         sw.WriteLine("Parameter Name = " + pr.Name);
-
                     }
                 }            
            
-                foreach (PropertyInfo pi in t.GetProperties())
+                foreach (PropertyInfo pi in t.GetProperties(flag))
                 {
-                                                   //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-                        sw.WriteLine("Property name = " + pi.Name);
-                
+                        sw.WriteLine("Property name = " + pi.Name);                
+                }
+
+                foreach(ConstructorInfo ci in t.GetConstructors())
+                {
+                    sw.WriteLine("Constructor name = " + ci.Name);
                 }
 
                 foreach (Type tt in t.GetInterfaces())
                 {
-                                                  //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-                        sw.WriteLine("Interface name = " + tt.Name);
-                
+                        sw.WriteLine("Interface name = " + tt.Name);                
                 }
 
                 foreach (EventInfo ei in t.GetEvents())
                 {
-                                                   //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-                        sw.WriteLine("Event name = " + ei.Name);
-                
+                        sw.WriteLine("Event name = " + ei.Name);                
                 }
             }
-            //foreach (MemberInfo mei in t.GetMembers())
-            //{                
-            //    using (StreamWriter sw = new StreamWriter(filePath, false, Encoding.Default))
-            //    {                               //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-            //        sw.WriteLine("Member name = " + mei.Name);
-            //    }
-            //}
-
-            //foreach (MethodInfo mi in t.GetMethods())
-            //{
-            //    using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Default))
-            //    {                               //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-            //        sw.WriteLine("Method Name = " + mi.Name);
-            //    }
-
-            //    foreach (ParameterInfo pr in mi.GetParameters())
-            //    {                   
-            //        using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Default))
-            //        {                               //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-            //            sw.WriteLine("Parameter Name = " + pr.Name);
-            //        }                   
-            //    }
-
-            //}
-
-            //foreach (FieldInfo fi in t.GetFields())
-            //{
-            //    using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Default))
-            //    {                               //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-            //        sw.WriteLine("Field name = " + fi.Name);
-            //    }
-            //}
-
-            //foreach (PropertyInfo pi in t.GetProperties())
-            //{
-            //    using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Default))
-            //    {                               //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-            //        sw.WriteLine("Property name = " + pi.Name);
-            //    }
-            //}
-
-            //foreach (Type tt in t.GetInterfaces())
-            //{
-            //    using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Default))
-            //    {                               //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-            //        sw.WriteLine("Interface name = " + tt.Name);
-            //    }
-            //}
-
-            //foreach (EventInfo ei in t.GetEvents())
-            //{
-            //    using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.Default))
-            //    {                               //путь к файлу, дозапись в конец файла или нет(новая запись), исп-мая кодировка
-            //        sw.WriteLine("Event name = " + ei.Name);
-            //    }
-            //}
         }
 
         public void Metods<T>()
-        {
+        {          
             Type t = typeof(T);
             foreach (MethodInfo mi in t.GetMethods())
             {
@@ -129,24 +67,27 @@ namespace lab_12
 
         public void FieldAndProperInfo<T>()
         {
+            var flag = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
+
             Type t = typeof(T);
-            foreach (FieldInfo fi in t.GetFields())
+            foreach (FieldInfo fi in t.GetFields(flag))
             {
                 Console.WriteLine("Field name = " + fi.Name);
             }
+
             Console.WriteLine();
-            foreach (PropertyInfo pi in t.GetProperties())
+
+            foreach (PropertyInfo pi in t.GetProperties(flag))
             {
                 Console.WriteLine("Property name = " + pi.Name);
             }
         }
 
-        public void Interf<T>()
+        public void Interf(U i)
         {
-            Type t = typeof(T);
+            Type t = typeof(U);
             foreach (Type tt in t.GetInterfaces())
             {
-                //string s = tt.Name;
                 Console.WriteLine("Interface name = " + tt.Name);
             }
         }
@@ -166,7 +107,11 @@ namespace lab_12
 
                 }
             }
+        }
 
+        public void CallMethod(U cl, N d, Action<N> method)
+        {
+            method(d);
         }
     }
 }
