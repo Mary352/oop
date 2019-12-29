@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.IO.Compression;
+
 
 namespace lab_13
 {
@@ -122,10 +124,41 @@ namespace lab_13
             }
         }
 
-        public string CopySomeFiles(string filePath = @"D:\3 сем\ООП 3 сем\ЛР")
+        public string CopySomeFiles(string filePath = @"D:\3 сем\ООП 3 сем\ЛР", string newFilePath = @"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSFiles")
         {
+            var dir = new DirectoryInfo(filePath);
+            //FileInfo fin = new FileInfo(filePath);
+
+            FileInfo[] fi = dir.GetFiles("*.pdf");
+
+            foreach (FileInfo file in fi)
+            {
+                file.CopyTo(newFilePath + "\\" + file.Name);
+            }
 
             return "Файлы скопированы";
+        }
+
+        public string MoveDir(string oldFilePath = @"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSFiles", string newFilePath = @"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSInspect\KMSFiles")
+        {
+            DirectoryInfo dir = new DirectoryInfo(oldFilePath);
+
+            if (dir.Exists && !Directory.Exists(newFilePath))
+            {
+                dir.MoveTo(newFilePath);
+            }
+            else if (dir.Exists && Directory.Exists(newFilePath))
+            {
+                Directory.Delete(newFilePath);
+                dir.MoveTo(newFilePath);
+            }
+
+            return "Папка " + oldFilePath + " перемещена в " + newFilePath;
+        }
+
+        public string CreateArchieve()
+        {
+            return "";
         }
     }
 }
