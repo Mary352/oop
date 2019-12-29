@@ -127,7 +127,6 @@ namespace lab_13
         public string CopySomeFiles(string filePath = @"D:\3 сем\ООП 3 сем\ЛР", string newFilePath = @"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSFiles")
         {
             var dir = new DirectoryInfo(filePath);
-            //FileInfo fin = new FileInfo(filePath);
 
             FileInfo[] fi = dir.GetFiles("*.pdf");
 
@@ -156,9 +155,33 @@ namespace lab_13
             return "Папка " + oldFilePath + " перемещена в " + newFilePath;
         }
 
-        public string CreateArchieve()
+        public string Zip_unZip()
         {
-            return "";
+            string startPath = @"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSInspect\KMSFiles";
+            string zipPath = @"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSInspect\result.zip";
+            string extractPath = @"D:\3 сем\ООП 3 сем\ЛР\lab_13\extract";
+
+            if (Directory.Exists(zipPath))
+            {
+                Directory.Delete(zipPath);
+                ZipFile.CreateFromDirectory(startPath, zipPath);
+            }
+            else
+            {
+                ZipFile.CreateFromDirectory(startPath, zipPath);
+            }
+
+            if (Directory.Exists(extractPath))
+            {
+                Directory.Delete(extractPath, true);
+                ZipFile.ExtractToDirectory(zipPath, extractPath);
+            }
+            else
+            {
+                ZipFile.ExtractToDirectory(zipPath, extractPath);
+            }            
+
+            return "Архив создан и разархивирован";
         }
     }
 }

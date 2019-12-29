@@ -34,6 +34,7 @@ namespace lab_13
             log.WriteFile(manager.CreateSpecialDir(@"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSFiles"));      // создана папка KMSInspect
             log.WriteFile(manager.CopySomeFiles());      // 
             log.WriteFile(manager.MoveDir());            // 
+            log.WriteFile(manager.Zip_unZip());          // 
 
         }
     }
