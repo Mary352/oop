@@ -26,10 +26,12 @@ namespace lab_13
 
             KMSFileManager manager = new KMSFileManager();
             log.WriteFile(manager.CreateSpecialDir());      // создана папка KMSInspect
-            log.WriteFile(manager.NewTxtFileInSpecDir());   // создан файл KMSdirinfo.txt
-            log.WriteFile(manager.CopyNewFile());           // файл KMSdirinfo.txt скопирован
-            log.WriteFile(manager.Rename());         // файл KMSdirinfo.txt удалён из KMSInspect
-            log.WriteFile(manager.DeleteOldFile());         // файл KMSdirinfo.txt удалён из KMSInspect
+            //log.WriteFile(manager.NewTxtFileInSpecDir());   // создан файл KMSdirinfo.txt
+            //log.WriteFile(manager.CopyNewFile());           // файл KMSdirinfo.txt скопирован
+            //log.WriteFile(manager.Rename());                // переименовать файл KMSdirinfo.txt переименовать
+            //log.WriteFile(manager.DeleteOldFile());         // файл KMSdirinfo.txt удалён из KMSInspect
+                        
+            log.WriteFile(manager.CreateSpecialDir(@"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSFiles"));      // создана папка KMSInspect
 
         }
     }

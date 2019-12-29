@@ -120,10 +120,12 @@ namespace lab_13
                 return null;
 
             }
-
-           
-
         }
 
+        public string CopySomeFiles()
+        {
+
+            return "Файлы скопированы";
+        }
     }
 }
