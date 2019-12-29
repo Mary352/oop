@@ -122,7 +122,7 @@ namespace lab_13
             }
         }
 
-        public string CopySomeFiles()
+        public string CopySomeFiles(string filePath = @"D:\3 сем\ООП 3 сем\ЛР")
         {
 
             return "Файлы скопированы";
