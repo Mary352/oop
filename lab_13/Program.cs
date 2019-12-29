@@ -19,10 +19,15 @@ namespace lab_13
             //log.WriteFile(dir.DirNum());
             //log.WriteFile(dir.ParentDir());
 
-            KMSFileInfo file = new KMSFileInfo();
-            log.WriteFile(file.FullPath());
-            log.WriteFile(file.CreationTime());
-            log.WriteFile(file.FileComboInfo());
+            //KMSFileInfo file = new KMSFileInfo();
+            //log.WriteFile(file.FullPath());
+            //log.WriteFile(file.CreationTime());
+            //log.WriteFile(file.FileComboInfo());
+
+            KMSFileManager manager = new KMSFileManager();
+            //log.WriteFile(manager.FilesDirsList());
+            log.WriteFile(manager.CreateSpecialDir());
+
         }
     }
 }
