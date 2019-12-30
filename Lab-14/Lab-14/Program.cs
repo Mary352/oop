@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
-using System.Text.Json;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Xml.Linq;
@@ -21,11 +16,6 @@ namespace Lab_14
     {
         static void Main(string[] args)
         {
-            //First.Action();
-            //Second.Action();
-            //Third.Action();
-            //Fourth.Action();
-
             //===========================бинарный===================================================================
             // объект для сериализации 
             Author a = new Author("Ann", "Smith", 23, "Unique life");
@@ -48,6 +38,7 @@ namespace Lab_14
             }
 
             //==================SOAP===================================================================================
+
             SoapFormatter soapFormatter = new SoapFormatter();
             using (Stream fStream = new FileStream("SoapData.dat", FileMode.Create, FileAccess.Write, FileShare.None))
             {
@@ -55,6 +46,7 @@ namespace Lab_14
             }
 
             //==================JSON===================================================================================
+
             Author a2 = new Author("Jack", "Fish", 46, "Magic of  sea");
             Author[] authors = new Author[] { a, a2 };
 
@@ -69,7 +61,6 @@ namespace Lab_14
             }
 
             //==================JSON===================================================================================
-            
 
             DataContractJsonSerializer jsonFormatter2 = new DataContractJsonSerializer(typeof(Author));
             using (FileStream fs2 = new FileStream("autho.json", FileMode.OpenOrCreate))
@@ -80,17 +71,18 @@ namespace Lab_14
             {
                 Author newAuthor = (Author)jsonFormatter2.ReadObject(fs2);
                 Console.WriteLine(newAuthor.ToString());
-
             }
 
             //==================XML====================================================================================
             // передаем в конструктор тип класса Author=Point dot = a
             XmlSerializer xSer = new XmlSerializer(typeof(Author));
+
             // получаем поток, куда будем записывать сериализованный объект 
             using (FileStream fs = new FileStream("author.xml", FileMode.OpenOrCreate)) 
             { 
                 xSer.Serialize(fs, a); 
             }
+
             // десериализация 
             using (FileStream fs = new FileStream("author.xml", FileMode.OpenOrCreate))
             {
@@ -101,11 +93,13 @@ namespace Lab_14
             //==================XML====================================================================================
             // передаем в конструктор тип класса Author=Point dot = a
             XmlSerializer xSer2 = new XmlSerializer(typeof(Author[]));
+
             // получаем поток, куда будем записывать сериализованный объект 
             using (FileStream fs8 = new FileStream("authorss.xml", FileMode.OpenOrCreate))
             {
                 xSer2.Serialize(fs8, authors);
             }
+
             // десериализация 
             using (FileStream fs8 = new FileStream("authorss.xml", FileMode.OpenOrCreate))
             {
@@ -117,6 +111,7 @@ namespace Lab_14
             }
 
             //==================XPath====================================================================================
+
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load("authorss.xml");
             XmlElement xRoot = xDoc.DocumentElement;
@@ -135,6 +130,7 @@ namespace Lab_14
             }
 
             //==================Linq to XML================================================================================
+            // создаём док. .xml
             XDocument xdoc = new XDocument(new XElement("Hogwarts",
                new XElement("student",
                    new XAttribute("name", "Bill Weasley"),
@@ -170,6 +166,7 @@ namespace Lab_14
                    new XElement("year", "4"))));
             xdoc.Save("Hogwarts.xml");
 
+            // запросы к созданному .xml
             XDocument xdoc2 = XDocument.Load("Hogwarts.xml");
             var items = from xe in xdoc2.Descendants("student")
                         where xe.Element("year").Value == "5"
