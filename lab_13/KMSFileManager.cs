@@ -252,6 +252,8 @@ namespace lab_13
                     break;
             }
 
+            using StreamWriter sw = new StreamWriter(@"D:\3 сем\ООП 3 сем\ЛР\lab_13\NEWlogfile.txt");
+
             for (int i = 0; i < str2.Count - 1; i++)
             {
                 for (DateTime j = needDt; j <= dtNow; j = j.AddSeconds(1))
@@ -260,13 +262,13 @@ namespace lab_13
                     if (str2.ElementAt(i).Contains(j.ToString()))
                     {
                         nextStrToConsole = true;
-                        Console.WriteLine(j.ToString());
                     }
                     else if (nextStrToConsole && !str2.ElementAt(i).Contains(j.ToString()))
                     {
                         while (!str2.ElementAt(i).StartsWith("Имя файла: KMSlogfile.txt"))
                         {
                             Console.WriteLine(str2.ElementAt(i));
+                            sw.WriteLine(str2.ElementAt(i));
                             i++;
                         }
 
