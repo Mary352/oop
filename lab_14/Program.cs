@@ -1,6 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Xml.Serialization;
+using System.Runtime.Serialization.Json;
+
 
 namespace lab_14
 {
@@ -30,6 +34,11 @@ namespace lab_14
             }
 
             //==================SOAP===================================================================================
+            SoapFormatter soapFormatter = new SoapFormatter(); 
+            using (Stream fStream = new FileStream("SoapData.dat", FileMode.Create, FileAccess.Write, FileShare.None)) 
+            { 
+                soapFormatter.Serialize(fStream, a); 
+            }
 
 
         }

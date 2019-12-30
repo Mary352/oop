@@ -8,12 +8,15 @@ namespace Lab_14
 {
     [Serializable]
     [DataContract]
-    class Person
+    public class Person
     {
         private string firstName;
         private string lastName;
         private int age;
-        
+        public Person ()
+        {
+
+        }
         public Person(string FirstName, string LastName, int Age)
         {
             firstName = FirstName;

@@ -9,10 +9,10 @@ namespace Lab_14
 {
     [Serializable]
     [DataContract]
-    sealed class Author : Person
+    sealed public class Author : Person
     {
         private string bookTitle;
-        private static int count = 0;
+        public static int count = 0;
 
         public Author(string firstName, string lastName, int age, string BookTitle) : base(firstName, lastName, age)
         {
@@ -24,7 +24,10 @@ namespace Lab_14
 
             count++;
         }
+        public Author()
+        {
 
+        }
         [DataMember]
         public string BookTitle
         {

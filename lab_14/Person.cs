@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace lab_14
 {
     [Serializable]
+    [DataContract]
     class Person
     {
         private string firstName;
@@ -18,18 +20,21 @@ namespace lab_14
             age = Age;
         }
 
+        [DataMember]
         public string FirstName
         {
             get => firstName;
             set => firstName = value;
         }
 
+        [DataMember]
         public string LastName
         {
             get => lastName;
             set => lastName = value;
         }
 
+        [DataMember]
         public int Age
         {
             get => age;
