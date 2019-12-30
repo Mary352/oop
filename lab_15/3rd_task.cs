@@ -6,16 +6,16 @@ namespace lab_15
 {
     class _3rd_task
     {
-        public static void Action()
+        public static void DoTask()
         {
-            Thread myThread = new Thread(new ThreadStart(Counter));
+            Thread myThread = new Thread(new ThreadStart(Executor));
             myThread.Start();       // запускаем поток
             Thread.Sleep(1000);     // приостанавливаем поток на 1 с (1000 мс)
             //myThread.Suspend();
             //myThread.Resume();
         }
 
-        public static void Counter()
+        public static void Executor()
         {
             Console.WriteLine("Введите n: ");
             int n = Convert.ToInt32(Console.ReadLine());
@@ -37,7 +37,7 @@ namespace lab_15
 
             using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
             {
-                for (int i = 1; i < n; i++)
+                for (int i = 1; i <= n; i++)
                 {
                     if (primeNum(i) == 2)
                     {

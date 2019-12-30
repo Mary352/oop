@@ -37,7 +37,7 @@ namespace lab_15
             //AppDomain.Unload(newD);
 
             //=====================================3 - вывод чисел===============================
-            _3rd_task.Action();
+            _3rd_task.DoTask();
 
         }
     }
