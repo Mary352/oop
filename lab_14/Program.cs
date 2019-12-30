@@ -16,13 +16,13 @@ namespace lab_14
             BinaryFormatter  formatterBin = new BinaryFormatter(); 
 
             // получаем поток, куда будем записывать сериализованный объект 
-            using (FileStream fs = new FileStream("points.dat", FileMode.OpenOrCreate)) 
+            using (FileStream fs = new FileStream("serial.dat", FileMode.OpenOrCreate)) 
             { 
                 formatterBin.Serialize(fs, a); 
             }
 
             // десериализация 
-            using (FileStream fs = new FileStream("points.dat", FileMode.OpenOrCreate)) 
+            using (FileStream fs = new FileStream("serial.dat", FileMode.OpenOrCreate)) 
             {
                 Author newA =(Author)formatterBin.Deserialize(fs);
                 Console.WriteLine($"FirstName: {newA.FirstName}\nFirstName: {newA.LastName}\nAge:{newA.Age}");
@@ -30,6 +30,7 @@ namespace lab_14
             }
 
             //==================SOAP===================================================================================
+
 
         }
 

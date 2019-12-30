@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<books>
+  <book name="CS">
+    <price>40000</price>
+  </book>
+  <Author name="Pavel">
+    <price>20000</price>
+    <age>19</age>
+    <location>by</location>
+  </Author>
+  <Author name="Sveta">
+    <price>4000</price>
+    <age>19</age>
+    <location>ru</location>
+  </Author>
+  <Author name="Andrey">
+    <price>4000</price>
+    <age>18</age>
+    <location>ru</location>
+  </Author>
+</books>

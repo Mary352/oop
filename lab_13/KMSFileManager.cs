@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 
 
 namespace lab_13
@@ -184,6 +185,101 @@ namespace lab_13
             return "Архив создан и разархивирован";
         }
 
+        public void Read()
+        {
+            int countNotes = 0;
+            bool nextStrToConsole = false;
 
+            List<string> str = new List<string>();
+            StreamReader read = new StreamReader(@"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSlogfile-копия.txt");
+            while (true) // считываем файл построчно, заносим каждую строку в коллекцию
+            {
+                string s = read.ReadLine();
+
+                if (s != null)
+                {
+                    str.Add(s);
+                }
+                else
+                    break;
+            }
+
+            IEnumerable<string> needStr = str.Where(s => s.StartsWith("Имя файла: KMSlogfile.txt"));
+            foreach(var i in needStr)
+            {
+                countNotes++;
+            }
+
+            Console.WriteLine("Количество записей: " + countNotes);
+
+            for (int i = 0; i < str.Count - 1; i++)
+            {
+                if (str.ElementAt(i).StartsWith("Дата создания: 29.12.2019"))
+                {
+                    nextStrToConsole = true;
+                }
+                else if (nextStrToConsole && !str.ElementAt(i).StartsWith("Дата создания: 29.12.2019"))
+                {
+                    while (!str.ElementAt(i).StartsWith("Имя файла: KMSlogfile.txt"))
+                    {
+                        Console.WriteLine(str.ElementAt(i));
+                        i++;
+                    }
+
+                    nextStrToConsole = false;
+                }
+                else
+                {
+                    nextStrToConsole = false;
+                }
+            }
+
+            DateTime dtNow = DateTime.Now;
+            DateTime needDt = dtNow.AddHours(-1);
+            Console.WriteLine(needDt);
+
+            List<string> str2 = new List<string>();
+            StreamReader read2 = new StreamReader(@"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSlogfile.txt");
+            while (true) // считываем файл построчно, заносим каждую строку в коллекцию
+            {
+                string s = read2.ReadLine();
+
+                if (s != null)
+                {
+                    str2.Add(s);    // добавляем строку в файл
+                }
+                else
+                    break;
+            }
+
+            for (int i = 0; i < str2.Count - 1; i++)
+            {
+                for (DateTime j = needDt; j <= dtNow; j = j.AddSeconds(1))
+                {
+                    // i - номер строки в списке строк
+                    if (str2.ElementAt(i).Contains(j.ToString()))
+                    {
+                        nextStrToConsole = true;
+                        Console.WriteLine(j.ToString());
+                    }
+                    else if (nextStrToConsole && !str2.ElementAt(i).Contains(j.ToString()))
+                    {
+                        while (!str2.ElementAt(i).StartsWith("Имя файла: KMSlogfile.txt"))
+                        {
+                            Console.WriteLine(str2.ElementAt(i));
+                            i++;
+                        }
+
+                        nextStrToConsole = false;
+                    }
+                    else
+                    {
+                        nextStrToConsole = false;
+                    }
+                }
+                
+            }
+
+        }
     }
 }
