@@ -52,15 +52,15 @@ namespace lab_13
         {
             string txt = "Hello!";
 
-            // открываем файл (стираем содержимое файла) 
+             
             FileStream fs = File.Open(filePath, FileMode.Create);
 
             StreamWriter sw = new StreamWriter(fs);
 
-            // записываем текст в поток 
+           
             sw.Write(txt);
 
-            // закрываем поток 
+            
             sw.Close();
 
             return "Создан файл " + filePath;
@@ -149,7 +149,7 @@ namespace lab_13
             }
             else if (dir.Exists && Directory.Exists(newFilePath))
             {
-                Directory.Delete(newFilePath);
+                Directory.Delete(newFilePath, true);
                 dir.MoveTo(newFilePath);
             }
 
@@ -164,7 +164,7 @@ namespace lab_13
 
             if (Directory.Exists(zipPath))
             {
-                Directory.Delete(zipPath);
+                Directory.Delete(zipPath, true);
                 ZipFile.CreateFromDirectory(startPath, zipPath);
             }
             else
@@ -192,7 +192,7 @@ namespace lab_13
 
             List<string> str = new List<string>();
             StreamReader read = new StreamReader(@"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSlogfile-копия.txt");
-            while (true) // считываем файл построчно, заносим каждую строку в коллекцию
+            while (true) 
             {
                 string s = read.ReadLine();
 
@@ -240,13 +240,13 @@ namespace lab_13
 
             List<string> str2 = new List<string>();
             StreamReader read2 = new StreamReader(@"D:\3 сем\ООП 3 сем\ЛР\lab_13\KMSlogfile.txt");
-            while (true) // считываем файл построчно, заносим каждую строку в коллекцию
+            while (true) 
             {
                 string s = read2.ReadLine();
 
                 if (s != null)
                 {
-                    str2.Add(s);    // добавляем строку в файл
+                    str2.Add(s);    
                 }
                 else
                     break;
@@ -258,7 +258,7 @@ namespace lab_13
             {
                 for (DateTime j = needDt; j <= dtNow; j = j.AddSeconds(1))
                 {
-                    // i - номер строки в списке строк
+                    
                     if (str2.ElementAt(i).Contains(j.ToString()))
                     {
                         nextStrToConsole = true;

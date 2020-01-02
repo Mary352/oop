@@ -24,10 +24,10 @@ namespace lab_15
 
             //========================================2 - домен=================================
 
-            //AppDomain domain = AppDomain.CurrentDomain;
-            //Console.WriteLine($"Name: {domain.FriendlyName}");
-            //Console.WriteLine($"Base Directory: {domain.BaseDirectory}");
-            //Console.WriteLine();
+            AppDomain domain = AppDomain.CurrentDomain;
+            Console.WriteLine($"Name: {domain.FriendlyName}");
+            Console.WriteLine($"Base Directory: {domain.BaseDirectory}");
+            Console.WriteLine();
 
             //Assembly[] assemblies = domain.GetAssemblies();
             //foreach (Assembly asm in assemblies)
@@ -38,16 +38,15 @@ namespace lab_15
             //AppDomain.Unload(newD);
 
             //=============================3 - вывод простых чисел===============================
-            // _3rd_task.DoTask();
+            //_3rd_task.DoTask();
 
             //=============================4 - два потока========================================
-            // Task_4.DoTaskI();
-            //Task_4.DoTaskII();
+             Task_4.DoTaskI();
 
             //=============================5 - Timer=============================================            
-            // создаем таймер
-            Timer timer = new Timer(Count, null, 0, 1000);
-            // (метод,который вызывается таймером, парамертр для метода, время задержки таймера (мс), интеравал м/у вызовами метода)
+            
+            //Timer timer = new Timer(Count, null, 0, 1000);
+            //Console.Read();
         }
 
         public static void Count(object obj)

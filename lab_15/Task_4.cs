@@ -21,6 +21,7 @@ namespace lab_15
                 Thread myThread2 = new Thread(new ParameterizedThreadStart(Func2));
                 myThread2.Start(n);
                 //myThread2.Priority = ThreadPriority.BelowNormal;
+                myThread2.Priority = ThreadPriority.Normal;
                 myThread1.Start(n);
             }
         }
@@ -34,47 +35,42 @@ namespace lab_15
             {
                 File.Create(path).Close();
             }
-            try
-            {
-                //lock ("null")
-                //{
-                //    using (StreamWriter sw = new StreamWriter(path, true, System.Text.Encoding.Default))
-                //    {
-                //        for (int i = 1; i <= Convert.ToInt32(num); i++)
-                //        {
-                //            if (i % 2 != 0)
-                //            {
-                //                sw.WriteLine("First Thread: " + i);
-                //                Console.WriteLine("First Thread: " + i);
-                //                Thread.Sleep(100);
-
-                //            }
-                //        }
-                //    }
-                //}
-
-                for (int i = 1; i <= Convert.ToInt32(num); i++)
+            
+                lock ("null")
                 {
-                    lock ("null")
+                    using (StreamWriter sw = new StreamWriter(path, true, System.Text.Encoding.Default))
                     {
-                        if (i % 2 != 0)
+                        for (int i = 1; i <= Convert.ToInt32(num); i++)
                         {
-                            using (StreamWriter sw = new StreamWriter(path, true, System.Text.Encoding.Default))
+                            if (i % 2 != 0)
                             {
                                 sw.WriteLine("First Thread: " + i);
                                 Console.WriteLine("First Thread: " + i);
+                                Thread.Sleep(100);
+
                             }
-                            Thread.Sleep(100);
-                            
                         }
                     }
-
                 }
-            }
-            catch (Exception error)
-            {
-                Console.WriteLine(error);
-            }
+
+                //for (int i = 1; i <= Convert.ToInt32(num); i++)
+                //{
+                //    lock ("null")
+                //    {
+                //        if (i % 2 != 0)
+                //        {
+                //            using (StreamWriter sw = new StreamWriter(path, true, System.Text.Encoding.Default))
+                //            {
+                //                sw.WriteLine("First Thread: " + i);
+                //                Console.WriteLine("First Thread: " + i);
+                //            }
+                //            Thread.Sleep(100);
+                            
+                //        }
+                //    }
+
+                //}
+            
 
         }
 
@@ -88,69 +84,64 @@ namespace lab_15
                 File.Create(path).Close();
             }
 
-            try
-            {
-                //lock ("null")
-                //{
-                //    using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
-                //    {
-                //        for (int i = 1; i <= Convert.ToInt32(num); i++)
-                //        {
-                //            if (i % 2 == 0)
-                //            {
-                //                sw.WriteLine("Second Thread: " + i);
-                //                Console.WriteLine("Second Thread: " + i);
-                //                Thread.Sleep(100);
-                //            }
-                //        }
-                //    }
-                //}
-
-                for (int i = 1; i <= Convert.ToInt32(num); i++)
+            
+                lock ("null")
                 {
-
-                    lock ("null")
+                    using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
                     {
-                        if (i % 2 == 0)
+                        for (int i = 1; i <= Convert.ToInt32(num); i++)
                         {
-                            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+                            if (i % 2 == 0)
                             {
                                 sw.WriteLine("Second Thread: " + i);
                                 Console.WriteLine("Second Thread: " + i);
+                                Thread.Sleep(100);
                             }
-                            Thread.Sleep(100);
                         }
                     }
-
                 }
-            }
-            catch (Exception error)
-            {
-                Console.WriteLine(error);
-            }
+
+                //for (int i = 1; i <= Convert.ToInt32(num); i++)
+                //{
+
+                //    lock ("null")
+                //    {
+                //        if (i % 2 == 0)
+                //        {
+                //            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+                //            {
+                //                sw.WriteLine("Second Thread: " + i);
+                //                Console.WriteLine("Second Thread: " + i);
+                //            }
+                //            Thread.Sleep(100);
+                //        }
+                //    }
+
+                //}
+            
 
         }
 
-        public static void DoTaskII()
-        {
-            for (var i = 1; i <= saveUserNum; i++)
-                new Thread(Enter).Start(i);
-        }
+        //public static void DoTaskII()
+        //{
+        //    for (var i = 1; i <= saveUserNum; i++)
+        //        new Thread(Enter).Start(i);
+        //}
 
-        private static void Enter(object id)
-        {
-            Thread myThread1 = new Thread(new ParameterizedThreadStart(Func1));
-            Thread myThread2 = new Thread(new ParameterizedThreadStart(Func2));
+        //private static void Enter(object id)
+        //{
+        //    Thread myThread1 = new Thread(new ParameterizedThreadStart(Func1));
+        //    Thread myThread2 = new Thread(new ParameterizedThreadStart(Func2));
 
 
-            //Console.WriteLine(id + " enter"); 
-            //sema.Wait();
-            myThread2.Start(saveUserNum);
-            //Console.WriteLine(id + " is sweeming");
-            Thread.Sleep(1000 * (int)id);
-            myThread1.Start(saveUserNum);
-            //Console.WriteLine(id + " is leaving");
-            sema.Release();
-        }
+        //    Console.WriteLine(id + " enter");
+        //    sema.Wait();
+        //    myThread2.Start(saveUserNum);
+        //    Console.WriteLine(id + " is sweeming");
+        //    Thread.Sleep(1000 * (int)id);
+        //    myThread1.Start(saveUserNum);
+        //    Console.WriteLine(id + " is leaving");
+        //    sema.Release();
+        //}
     }
 }

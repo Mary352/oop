@@ -9,21 +9,20 @@ using System.Xml;
 using System.Xml.Linq;
 
 namespace Lab_14
-{
-    
+{   
 
     class Program
     {
         static void Main(string[] args)
         {
             //===========================бинарный===================================================================
-            // объект для сериализации 
+            
             Author a = new Author("Ann", "Smith", 23, "Unique life");
 
-            // создаем объект 
+           
             BinaryFormatter formatterBin = new BinaryFormatter();
 
-            // получаем поток, куда будем записывать сериализованный объект 
+           
             using (FileStream fs = new FileStream("serial.dat", FileMode.OpenOrCreate))
             {
                 formatterBin.Serialize(fs, a);
@@ -74,10 +73,10 @@ namespace Lab_14
             }
 
             //==================XML====================================================================================
-            // передаем в конструктор тип класса Author=Point dot = a
+           
             XmlSerializer xSer = new XmlSerializer(typeof(Author));
 
-            // получаем поток, куда будем записывать сериализованный объект 
+           
             using (FileStream fs = new FileStream("author.xml", FileMode.OpenOrCreate)) 
             { 
                 xSer.Serialize(fs, a); 
@@ -91,10 +90,10 @@ namespace Lab_14
             }
 
             //==================XML====================================================================================
-            // передаем в конструктор тип класса Author=Point dot = a
+           
             XmlSerializer xSer2 = new XmlSerializer(typeof(Author[]));
 
-            // получаем поток, куда будем записывать сериализованный объект 
+           
             using (FileStream fs8 = new FileStream("authorss.xml", FileMode.OpenOrCreate))
             {
                 xSer2.Serialize(fs8, authors);

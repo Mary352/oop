@@ -9,8 +9,8 @@ namespace lab_15
         public static void DoTask()
         {
             Thread myThread = new Thread(new ThreadStart(Executor));
-            myThread.Start();       // запускаем поток
-            Thread.Sleep(1000);     // приостанавливаем поток на 1 с (1000 мс)
+            myThread.Start();       
+            Thread.Sleep(1000);     
             //myThread.Suspend();
             //myThread.Resume();
         }
